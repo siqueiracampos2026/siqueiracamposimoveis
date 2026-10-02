@@ -93,7 +93,9 @@ nav.menu{display:flex;gap:clamp(18px,2.4vw,36px);margin-left:clamp(8px,2vw,40px)
 .hero .bg{position:absolute;inset:0;background-position:center 45%;background-size:cover;background-repeat:no-repeat;opacity:0;transform:scale(1.12);transition:opacity 1.8s ease,transform 9s linear}
 .hero .bg.on{opacity:1;transform:scale(1)}
 .hero-dots{position:absolute;z-index:3;right:clamp(16px,5vw,64px);bottom:clamp(48px,9vh,110px);display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.hero-dots .cap{color:#fff;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.85;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hero-dots .cap{color:#fff;font-size:15px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.55);display:flex;align-items:center;gap:12px;text-align:right}
+.hero-dots .cap::before{content:"";width:28px;height:1px;background:var(--gold-soft);flex:none}
+.hero-dots .csub{display:block;color:#F0DCA6;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.55);margin-top:-6px;min-height:1em}
 .hero-dots .ln{display:flex;gap:8px}
 .hero-dots button{width:34px;height:2px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;position:relative;overflow:hidden}
 .hero-dots button[aria-current="true"]::after{content:"";position:absolute;inset:0;background:var(--gold-soft);transform-origin:left;animation:fill 6.5s linear forwards}
@@ -131,10 +133,9 @@ section{padding-block:clamp(72px,11vw,140px)}
 .card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .card:hover .img img{transform:scale(1.06)}
 .tag{position:absolute;left:16px;top:16px;background:var(--paper);color:var(--navy);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:7px 12px;font-weight:500}
-.card .img::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg,rgba(9,18,36,0),rgba(9,18,36,.7));pointer-events:none}
-.card .loc{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px}
+.card .loc{background:var(--navy);color:#fff;font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;padding:13px 18px;display:flex;align-items:center;gap:12px}
 .card .loc::before{content:"";width:22px;height:1px;background:var(--gold-soft)}
-.soon .img::after{display:none}
+.soon .img strong{font-size:24px}
 .card h3{font-size:22px;font-weight:400;margin-top:22px}
 .card .meta{color:var(--muted);font-size:14px;margin-top:6px}
 .card .price{margin-top:14px;font-size:15px;color:var(--navy)}
@@ -291,8 +292,11 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
   form.search button{width:62px}
   .facts{gap:8px 22px}
   .demo{display:none}
-  .hero-dots{bottom:18px;right:16px;flex-direction:row;align-items:center;gap:12px}
-  .hero .wrap{padding-bottom:64px}
+  .hero-dots{bottom:14px;right:16px;left:16px;align-items:flex-start;gap:6px}
+  .hero-dots .cap{font-size:13px;letter-spacing:.24em}
+  .hero-dots .csub{font-size:11px;margin-top:0}
+  .hero .wrap{padding-bottom:110px}
+  .hero .wrap{padding-bottom:118px}
   .hero::after{background:linear-gradient(180deg,rgba(9,18,36,.6) 0%,rgba(9,18,36,.35) 40%,rgba(9,18,36,.8) 100%)}
 }
 @media (prefers-reduced-motion:reduce){
@@ -532,7 +536,9 @@ form.lead .alt a{color:#F0DCA6}
   <div class="ph" id="heroPh">
     <div class="bg on" style="background-image:url(sp-ponte.webp)" role="img" aria-label="Vista aérea de São Paulo com a Marginal Pinheiros" data-cap="São Paulo"></div>
     <div class="bg" style="background-image:url(sp-marginal.webp)" role="img" aria-label="Prédios à beira da Marginal Pinheiros" data-cap="Zona Oeste"></div>
-    <div class="bg" style="background-image:url(hero.webp)" role="img" aria-label="Fachada do Boulevard Butantã à noite" data-cap="Boulevard Butantã"></div>
+    <div class="bg" style="background-image:url(hero.webp)" role="img" aria-label="Fachada do Boulevard Butantã à noite" data-cap="Butantã" data-sub="Boulevard Butantã"></div>
+    <div class="bg" style="background-image:url(moema.webp)" role="img" aria-label="Vista de Moema com o Parque Ibirapuera" data-cap="Moema"></div>
+    <div class="bg" style="background-image:url(epic-cyrela.webp)" role="img" aria-label="Terraço do Epic, da Cyrela, com vista para a cidade" data-cap="Pinheiros · Jardim Europa" data-sub="Epic · Cyrela"></div>
   </div>
   <div class="wrap">
     <h1>O seu próximo <em>endereço</em> em São Paulo</h1>
@@ -554,7 +560,7 @@ form.lead .alt a{color:#F0DCA6}
       <a href="#bairro-moema" data-b="moema">Moema</a>
     </div>
   </div>
-  <div class="hero-dots"><span class="cap" id="heroCap">São Paulo</span><div class="ln" id="heroDots"></div></div>
+  <div class="hero-dots"><span class="cap" id="heroCap">São Paulo</span><span class="csub" id="heroSub"></span><div class="ln" id="heroDots"></div></div>
 </section>
 
 <section id="empreendimentos">
@@ -568,19 +574,19 @@ form.lead .alt a{color:#F0DCA6}
     </div>
     <div class="grid">
       <a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener">
-        <div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span><span class="loc">Butantã</span></div>
+        <div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div>
         <h3>Boulevard Butantã</h3>
         <div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div>
         <div class="price">A partir de <b>R$ 998 mil</b></div>
       </a>
       <div class="card soon rv">
-        <div class="img"><div><small>Em breve</small><strong>Pinheiros</strong></div></div>
+        <div class="loc">Pinheiros</div><div class="img"><div><small>Siqueira Campos</small><strong>Em breve</strong></div></div>
         <h3>Novo lançamento</h3>
         <div class="meta">Novas opções no bairro</div>
         <div class="price">Cadastre-se para receber primeiro</div>
       </div>
       <a class="card rv" href="#gravura-perdizes">
-        <div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span><span class="loc">Perdizes</span></div>
+        <div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div>
         <h3>GRAVURA Perdizes</h3>
         <div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div>
         <div class="price">A partir de <b>R$ 2,88 milhões</b></div>
@@ -854,9 +860,9 @@ form.lead .alt a{color:#F0DCA6}
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
     <div class="grid">
-      <a class="card rv" href="#empreendimentos"><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span><span class="loc">Butantã</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price-c" style="margin-top:14px;font-size:15px;color:var(--navy)">A partir de <b style="font-weight:600">R$ 998 mil</b></div></a>
-      <div class="card soon rv"><div class="img"><div><small>Em breve</small><strong>Pinheiros</strong></div></div><h3>Novo lançamento</h3><div class="meta">Novas opções no bairro</div></div>
-      <div class="card soon rv"><div class="img"><div><small>Em breve</small><strong>Itaim Bibi</strong></div></div><h3>Novo lançamento</h3><div class="meta">Novas opções no bairro</div></div>
+      <a class="card rv" href="#empreendimentos"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price-c" style="margin-top:14px;font-size:15px;color:var(--navy)">A partir de <b style="font-weight:600">R$ 998 mil</b></div></a>
+      <div class="card soon rv"><div class="loc">Pinheiros</div><div class="img"><div><small>Siqueira Campos</small><strong>Em breve</strong></div></div><h3>Novo lançamento</h3><div class="meta">Novas opções no bairro</div></div>
+      <div class="card soon rv"><div class="loc">Itaim Bibi</div><div class="img"><div><small>Siqueira Campos</small><strong>Em breve</strong></div></div><h3>Novo lançamento</h3><div class="meta">Novas opções no bairro</div></div>
     </div>
   </div>
 </section>
@@ -873,7 +879,7 @@ form.lead .alt a{color:#F0DCA6}
 <section style="padding-block:clamp(44px,6vw,80px)">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Empreendimentos</p><h2>Apartamentos em <b>Butantã</b></h2></div><span class="b-count">1 empreendimento</span></div>
-    <div class="grid"><a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener"><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span><span class="loc">Butantã</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a></div>
+    <div class="grid"><a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a></div>
   </div>
 </section>
 <section class="band-white">
@@ -925,7 +931,7 @@ form.lead .alt a{color:#F0DCA6}
 <section style="padding-block:clamp(44px,6vw,80px)">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Empreendimentos</p><h2>Apartamentos em <b>Perdizes</b></h2></div><span class="b-count">1 empreendimento</span></div>
-    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span><span class="loc">Perdizes</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a></div>
   </div>
 </section>
 <section class="band-white">
@@ -1097,7 +1103,7 @@ form.lead .alt a{color:#F0DCA6}
   bgs.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Imagem '+(i+1));d.onclick=function(){heroGo(i)};hd.appendChild(d)});
   function heroGo(i){hi=(i+bgs.length)%bgs.length;bgs.forEach(function(b,k){b.classList.toggle('on',k===hi)});
     [].forEach.call(hd.children,function(d,k){d.removeAttribute('aria-current');void d.offsetWidth;if(k===hi)d.setAttribute('aria-current','true')});
-    hc.textContent=bgs[hi].dataset.cap; clearTimeout(ht); if(!reduce) ht=setTimeout(function(){heroGo(hi+1)},6500);}
+    hc.textContent=bgs[hi].dataset.cap; document.getElementById('heroSub').textContent=bgs[hi].dataset.sub||''; clearTimeout(ht); if(!reduce) ht=setTimeout(function(){heroGo(hi+1)},6500);}
   heroGo(0);
 
   // Carrossel

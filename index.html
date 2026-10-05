@@ -178,6 +178,8 @@ section{padding-block:clamp(72px,11vw,140px)}
 .slide .by{margin-top:10px;font-size:17px;color:var(--muted)}
 .slide .by b{color:var(--navy);font-weight:500}
 .slide p{color:var(--muted);max-width:44ch;font-size:17px}
+.opp .slide{display:block;padding-inline:0}.opp .slide .ph{aspect-ratio:16/9}.opp .slide .txt{padding:34px 0 10px}
+@media (max-width:700px){.opp .slide .ph{aspect-ratio:4/3}}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px;padding:0;list-style:none}
 .pills li{border:1px solid var(--line);padding:9px 18px;font-size:14px;color:var(--muted);letter-spacing:.03em}
 .arrow{position:absolute;top:45%;z-index:3;width:46px;height:46px;border:0;background:transparent;cursor:pointer;color:var(--navy);display:grid;place-items:center}
@@ -469,11 +471,11 @@ a.to-pl:hover{color:var(--gold)}
 .car-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2*18px)/2.35);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .car-track::-webkit-scrollbar{display:none}
 .car-track>*{scroll-snap-align:start;min-width:0}
-.slide{border:0;padding:0;background:var(--line);cursor:zoom-in;display:block;width:100%;text-align:left;font-family:inherit;position:relative;overflow:hidden}
-.slide .ph{aspect-ratio:4/3;overflow:hidden}
-.slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
-.slide:hover img{transform:scale(1.05)}
-.slide .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 14px;color:#fff;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(180deg,transparent,rgba(9,18,36,.78))}
+.car .slide{border:0;padding:0;background:var(--line);cursor:zoom-in;display:block;width:100%;text-align:left;font-family:inherit;position:relative;overflow:hidden}
+.car .slide .ph{aspect-ratio:4/3;overflow:hidden}
+.car .slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.car .slide:hover img{transform:scale(1.05)}
+.car .slide .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 14px;color:#fff;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(180deg,transparent,rgba(9,18,36,.78))}
 .car-plantas .car-track{grid-auto-columns:calc((100% - 2*18px)/2.6)}
 .pl{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
 .pl .ph{aspect-ratio:3/2;background:#fff;cursor:zoom-in;border:0;padding:10px;display:block;width:100%}
@@ -612,7 +614,7 @@ a.to-pl:hover{color:var(--gold)}
       <div class="dd"><button type="button" aria-haspopup="true">Zona Sul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="dd-menu"><a href="#bairro-itaim-bibi" data-b="itaim">Itaim Bibi</a><a href="#bairro-moema" data-b="moema">Moema</a></div></div>
       <div class="dd"><button type="button" aria-haspopup="true">Empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="dd-menu"><a href="#empreendimentos">Lançamentos</a><a href="#oportunidades">Oportunidades</a><a href="#empreendimentos">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a></div></div>
+        <div class="dd-menu"><a href="#empreendimentos">Lançamentos</a><a href="#oportunidades">Oportunidades</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a></div></div>
     </nav>
     <a class="cta" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
   </div>
@@ -622,7 +624,7 @@ a.to-pl:hover{color:var(--gold)}
   <button id="close">Fechar ✕</button>
   <a href="#empreendimentos">Empreendimentos</a>
   <a href="#oportunidades">Oportunidades</a>
-  <div class="dsub"><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener">Boulevard Butantã</a></div>
+  <div class="dsub"><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#boulevard-butanta">Boulevard Butantã</a></div>
   <a href="#bairros">Bairros</a>
   <div class="dsub"><a href="#bairro-butanta">Butantã</a><a href="#bairro-pinheiros">Pinheiros</a><a href="#bairro-perdizes">Perdizes</a><a href="#bairro-itaim-bibi">Itaim Bibi</a><a href="#bairro-moema">Moema</a></div>
   <a href="#sobre">Sobre o corretor</a>
@@ -671,7 +673,7 @@ a.to-pl:hover{color:var(--gold)}
       <a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
     </div>
     <div class="grid">
-      <a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener">
+      <a class="card rv" href="#boulevard-butanta">
         <div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div>
         <h3>Boulevard Butantã</h3>
         <div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div>
@@ -761,7 +763,7 @@ a.to-pl:hover{color:var(--gold)}
         <li><b>83 a 134 m²</b>3 plantas</li>
         <li><b>Linha 4</b>Metrô Butantã</li>
       </ul>
-      <a class="link" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      <a class="link" href="#boulevard-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -798,7 +800,7 @@ a.to-pl:hover{color:var(--gold)}
         <a class="cover" href="#bairro-butanta" aria-label="Ver o bairro Butantã"></a>
         <div class="z">Zona Oeste</div><h3>Butantã</h3>
         <p>Metrô Linha 4-Amarela, USP e acesso rápido a Pinheiros e à Marginal.</p>
-        <div class="emps"><a href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener">Boulevard Butantã →</a><a href="#grand-metropolitan-butanta">Grand Metropolitan →</a></div>
+        <div class="emps"><a href="#boulevard-butanta">Boulevard Butantã →</a><a href="#grand-metropolitan-butanta">Grand Metropolitan →</a></div>
       </div>
       <div class="bairro rv" id="b-pinheiros">
         <a class="cover" href="#bairro-pinheiros" aria-label="Ver o bairro Pinheiros"></a>
@@ -855,6 +857,108 @@ a.to-pl:hover{color:var(--gold)}
         </ul>
       </div>
     </div>
+  </div>
+</section>
+</main>
+<main id="pg-boulevard-butanta" class="pg-sub e-page" data-title="Boulevard Butantã · Siqueira Campos" data-emp="Boulevard Butantã" hidden>
+<section class="e-hero" style="padding-block:0">
+  <div class="ph"><div class="bg on" style="background-image:url(boulevard-fachada.webp)" role="img" aria-label="Fachada"></div><div class="bg" style="background-image:url(boulevard-decorado-sala-jantar.webp)" role="img" aria-label="Sala de jantar integrada à cozinha · 134 m²"></div><div class="bg" style="background-image:url(boulevard-piscina.webp)" role="img" aria-label="Piscina com deck"></div></div>
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Caminho"><a href="#inicio">Início</a><i>›</i><a href="#empreendimentos">Empreendimentos</a><i>›</i><a href="#bairro-butanta">Butantã</a><i>›</i><span>Boulevard Butantã</span></nav>
+      <span class="status">Em obras</span>
+      <h1>Boulevard <b>Butantã</b></h1>
+      <div class="addr">Rua Camargo, 34 · Butantã · São Paulo/SP</div>
+      <p class="lead">Apartamentos de <a class="to-pl" href="#boulevard-butanta-plantas">83, 106 e 134 m²</a> com varanda gourmet, a 240 passos do metrô Butantã, ao lado de Pinheiros e perto da Faria Lima.</p>
+    </div>
+    <div class="pricebox">
+      <small>À venda a partir de</small>
+      <strong>R$ 998.000</strong>
+      <a class="btn-gold" href="#boulevard-butanta-contato">Quero a tabela de valores</a>
+      <em>Valores sujeitos a alteração sem aviso.</em>
+    </div>
+  </div>
+  <div class="e-dots"></div>
+</section>
+<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Diálogo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM4 10h16M8 14h.01M16 14h.01M8 21l2-4M16 21l-2-4"/></svg><span>240 passos do metrô</span></li><li class="lk"><a href="#boulevard-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>83, 106 e 134 m²</span></a></li><li class="lk"><a href="#boulevard-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>1 a 3 suítes</span></a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span>Vaga de garagem</span></li></ul></div></div>
+<nav class="e-nav" aria-label="Seções do empreendimento"><ul><li><a href="#boulevard-butanta-decorado">Decorado</a></li><li><a href="#boulevard-butanta-plantas">Plantas</a></li><li><a href="#boulevard-butanta-areas">Áreas comuns</a></li><li><a href="#boulevard-butanta-local">Localização</a></li><li style="margin-left:auto"><a class="cta" href="#boulevard-butanta-contato">Contato</a></li></ul></nav>
+<section>
+  <div class="wrap split sobre">
+    <div class="copy rv">
+      <p class="eyebrow">Zona Oeste · Butantã</p>
+      <h2>Conheça o <b>Boulevard Butantã</b></h2>
+      <div class="rule"></div>
+      <p>O Boulevard Butantã, da Diálogo, tem apartamentos de <a class="to-pl" href="#boulevard-butanta-plantas">83, 106 e 134 m²</a> com varanda gourmet e acabamento de alto padrão. São opções de 1 suíte, 2 suítes, 3 dormitórios ou 3 suítes, com hall privativo e duas varandas nas <a class="to-pl" href="#boulevard-butanta-plantas">plantas</a> maiores.</p><p>A obra está em andamento e o decorado está aberto para visita com hora marcada. O pagamento pode ser feito direto com a construtora, com entrada facilitada e parcelas durante a obra, além de FGTS e financiamento bancário. Eu te acompanho na visita, na simulação e na negociação.</p>
+      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>A 240 passos do metrô Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Decorado aberto para visita</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#boulevard-butanta-plantas">Plantas</a> de <a class="to-pl" href="#boulevard-butanta-plantas">83 a 134 m²</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Varanda gourmet em todas as <a class="to-pl" href="#boulevard-butanta-plantas">plantas</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pagamento direto com a construtora</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Aceita FGTS e financiamento</span></li></ul>
+      <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Agendar visita</a>
+    </div>
+    <div class="media rv">
+      <div class="frame"><img class="px" src="boulevard-obra-1.webp" alt="Fachada do Boulevard Butantã" loading="lazy"></div>
+      <a class="stat" href="#boulevard-butanta-local" style="text-decoration:none"><div class="n">240<small>passos</small></div><div class="l">Do metrô Butantã →</div></a>
+    </div>
+  </div>
+</section>
+<section class="car-sec" id="boulevard-butanta-decorado">
+  <div class="wrap">
+    <div class="car-head rv"><div><p class="eyebrow">Apartamento decorado</p><h2>Por dentro do <b>decorado</b></h2><div class="cnt">12 fotos · toque para ampliar</div></div>
+      <div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+    <div class="car" data-fotos='[["boulevard-decorado-sala-jantar.webp", "Sala de jantar integrada à cozinha · 134 m²"], ["boulevard-decorado-varanda-gourmet.webp", "Varanda gourmet com churrasqueira"], ["boulevard-decorado-dormitorio-home-office.webp", "Dormitório com home office"], ["boulevard-decorado-lavabo.webp", "Lavabo em mármore"], ["boulevard-sala-83.webp", "Sala de estar · 83 m²"], ["boulevard-varanda-134.webp", "Varanda integrada · 134 m²"], ["boulevard-cozinha-134.webp", "Cozinha com balcão · 134 m²"], ["boulevard-hall-privativo.webp", "Hall de entrada privativo"], ["boulevard-suite-1-134.webp", "Suíte · 134 m²"], ["boulevard-suite-2-134.webp", "Suíte · 134 m²"], ["boulevard-suite-varanda.webp", "Suíte integrada à varanda"], ["boulevard-quarto-criancas.webp", "Quarto das crianças"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Sala de jantar integrada à cozinha · 134 m²"><div class="ph"><img src="boulevard-decorado-sala-jantar.webp" alt="Sala de jantar integrada à cozinha · 134 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Sala de jantar integrada à cozinha · 134 m²</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Varanda gourmet com churrasqueira"><div class="ph"><img src="boulevard-decorado-varanda-gourmet.webp" alt="Varanda gourmet com churrasqueira · Boulevard Butantã" loading="lazy"></div><span class="cap">Varanda gourmet com churrasqueira</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Dormitório com home office"><div class="ph"><img src="boulevard-decorado-dormitorio-home-office.webp" alt="Dormitório com home office · Boulevard Butantã" loading="lazy"></div><span class="cap">Dormitório com home office</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Lavabo em mármore"><div class="ph"><img src="boulevard-decorado-lavabo.webp" alt="Lavabo em mármore · Boulevard Butantã" loading="lazy"></div><span class="cap">Lavabo em mármore</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Sala de estar · 83 m²"><div class="ph"><img src="boulevard-sala-83.webp" alt="Sala de estar · 83 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Sala de estar · 83 m²</span></button><button type="button" class="slide" data-i="5" aria-label="Ampliar: Varanda integrada · 134 m²"><div class="ph"><img src="boulevard-varanda-134.webp" alt="Varanda integrada · 134 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Varanda integrada · 134 m²</span></button><button type="button" class="slide" data-i="6" aria-label="Ampliar: Cozinha com balcão · 134 m²"><div class="ph"><img src="boulevard-cozinha-134.webp" alt="Cozinha com balcão · 134 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Cozinha com balcão · 134 m²</span></button><button type="button" class="slide" data-i="7" aria-label="Ampliar: Hall de entrada privativo"><div class="ph"><img src="boulevard-hall-privativo.webp" alt="Hall de entrada privativo · Boulevard Butantã" loading="lazy"></div><span class="cap">Hall de entrada privativo</span></button><button type="button" class="slide" data-i="8" aria-label="Ampliar: Suíte · 134 m²"><div class="ph"><img src="boulevard-suite-1-134.webp" alt="Suíte · 134 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Suíte · 134 m²</span></button><button type="button" class="slide" data-i="9" aria-label="Ampliar: Suíte · 134 m²"><div class="ph"><img src="boulevard-suite-2-134.webp" alt="Suíte · 134 m² · Boulevard Butantã" loading="lazy"></div><span class="cap">Suíte · 134 m²</span></button><button type="button" class="slide" data-i="10" aria-label="Ampliar: Suíte integrada à varanda"><div class="ph"><img src="boulevard-suite-varanda.webp" alt="Suíte integrada à varanda · Boulevard Butantã" loading="lazy"></div><span class="cap">Suíte integrada à varanda</span></button><button type="button" class="slide" data-i="11" aria-label="Ampliar: Quarto das crianças"><div class="ph"><img src="boulevard-quarto-criancas.webp" alt="Quarto das crianças · Boulevard Butantã" loading="lazy"></div><span class="cap">Quarto das crianças</span></button></div></div>
+    <p class="car-note">Imagens do apartamento decorado. Móveis e itens de decoração não fazem parte do imóvel.</p>
+  </div>
+</section><section class="car-sec car-plantas" id="boulevard-butanta-plantas">
+  <div class="wrap">
+    <div class="car-head rv"><div><p class="eyebrow">Plantas</p><h2>Escolha a sua <b>planta</b></h2><div class="cnt">5 opções</div></div><div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+    <div class="car" data-fotos='[["boulevard-planta-83.webp", "1 suíte · 83 m²"], ["boulevard-planta-106-2suites.webp", "2 suítes · 106 m²"], ["boulevard-planta-106-3dorm.webp", "3 dormitórios · 106 m²"], ["boulevard-planta-134-2suites.webp", "2 suítes · 134 m²"], ["boulevard-planta-134-3suites.webp", "3 suítes · 134 m²"]]'><div class="car-track"><div class="pl"><button type="button" class="ph" data-i="0" aria-label="Ampliar planta 1 suíte 83 m²"><img src="boulevard-planta-83.webp" alt="Planta 1 suíte · 83 m² · Boulevard Butantã" loading="lazy"></button><div class="tx"><span class="m">83 m²</span><h3>1 suíte</h3><p>Varanda gourmet · área de serviço</p><a class="btn-line" href="#boulevard-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="1" aria-label="Ampliar planta 2 suítes 106 m²"><img src="boulevard-planta-106-2suites.webp" alt="Planta 2 suítes · 106 m² · Boulevard Butantã" loading="lazy"></button><div class="tx"><span class="m">106 m²</span><h3>2 suítes</h3><p>Varanda gourmet · lavabo</p><a class="btn-line" href="#boulevard-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="2" aria-label="Ampliar planta 3 dormitórios 106 m²"><img src="boulevard-planta-106-3dorm.webp" alt="Planta 3 dormitórios · 106 m² · Boulevard Butantã" loading="lazy"></button><div class="tx"><span class="m">106 m²</span><h3>3 dormitórios</h3><p>1 suíte · varanda gourmet · lavabo</p><a class="btn-line" href="#boulevard-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="3" aria-label="Ampliar planta 2 suítes 134 m²"><img src="boulevard-planta-134-2suites.webp" alt="Planta 2 suítes · 134 m² · Boulevard Butantã" loading="lazy"></button><div class="tx"><span class="m">134 m²</span><h3>2 suítes</h3><p>Suíte master com closet · 2 varandas</p><a class="btn-line" href="#boulevard-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="4" aria-label="Ampliar planta 3 suítes 134 m²"><img src="boulevard-planta-134-3suites.webp" alt="Planta 3 suítes · 134 m² · Boulevard Butantã" loading="lazy"></button><div class="tx"><span class="m">134 m²</span><h3>3 suítes</h3><p>Hall privativo · elevador social · 2 varandas</p><a class="btn-line" href="#boulevard-butanta-contato">Receber esta planta</a></div></div></div></div>
+    <p class="car-note">Plantas ilustrativas. Metragens e disponibilidade confirmadas com o corretor.</p>
+  </div>
+</section><section class="car-sec band-white" id="boulevard-butanta-areas">
+  <div class="wrap">
+    <div class="car-head rv"><div><p class="eyebrow">Lazer e áreas comuns</p><h2>Áreas <b>comuns</b></h2><div class="cnt">13 fotos · toque para ampliar</div></div>
+      <div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+    <div class="car" data-fotos='[["boulevard-fachada.webp", "Fachada"], ["boulevard-hall-social.webp", "Hall social"], ["boulevard-piscina.webp", "Piscina com deck"], ["boulevard-piscina-2.webp", "Piscina"], ["boulevard-academia.webp", "Academia"], ["boulevard-churrasqueira.webp", "Churrasqueira gourmet"], ["boulevard-salao-gourmet.webp", "Salão gourmet com terraço"], ["boulevard-espaco-convivencia.webp", "Espaço convivência"], ["boulevard-quadra.webp", "Quadra poliesportiva"], ["boulevard-playground.webp", "Playground"], ["boulevard-espaco-delivery.webp", "Espaço delivery"], ["boulevard-obra-1.webp", "Obra em andamento"], ["boulevard-obra-2.webp", "Obra em andamento"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Fachada"><div class="ph"><img src="boulevard-fachada.webp" alt="Fachada · Boulevard Butantã" loading="lazy"></div><span class="cap">Fachada</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Hall social"><div class="ph"><img src="boulevard-hall-social.webp" alt="Hall social · Boulevard Butantã" loading="lazy"></div><span class="cap">Hall social</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Piscina com deck"><div class="ph"><img src="boulevard-piscina.webp" alt="Piscina com deck · Boulevard Butantã" loading="lazy"></div><span class="cap">Piscina com deck</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Piscina"><div class="ph"><img src="boulevard-piscina-2.webp" alt="Piscina · Boulevard Butantã" loading="lazy"></div><span class="cap">Piscina</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Academia"><div class="ph"><img src="boulevard-academia.webp" alt="Academia · Boulevard Butantã" loading="lazy"></div><span class="cap">Academia</span></button><button type="button" class="slide" data-i="5" aria-label="Ampliar: Churrasqueira gourmet"><div class="ph"><img src="boulevard-churrasqueira.webp" alt="Churrasqueira gourmet · Boulevard Butantã" loading="lazy"></div><span class="cap">Churrasqueira gourmet</span></button><button type="button" class="slide" data-i="6" aria-label="Ampliar: Salão gourmet com terraço"><div class="ph"><img src="boulevard-salao-gourmet.webp" alt="Salão gourmet com terraço · Boulevard Butantã" loading="lazy"></div><span class="cap">Salão gourmet com terraço</span></button><button type="button" class="slide" data-i="7" aria-label="Ampliar: Espaço convivência"><div class="ph"><img src="boulevard-espaco-convivencia.webp" alt="Espaço convivência · Boulevard Butantã" loading="lazy"></div><span class="cap">Espaço convivência</span></button><button type="button" class="slide" data-i="8" aria-label="Ampliar: Quadra poliesportiva"><div class="ph"><img src="boulevard-quadra.webp" alt="Quadra poliesportiva · Boulevard Butantã" loading="lazy"></div><span class="cap">Quadra poliesportiva</span></button><button type="button" class="slide" data-i="9" aria-label="Ampliar: Playground"><div class="ph"><img src="boulevard-playground.webp" alt="Playground · Boulevard Butantã" loading="lazy"></div><span class="cap">Playground</span></button><button type="button" class="slide" data-i="10" aria-label="Ampliar: Espaço delivery"><div class="ph"><img src="boulevard-espaco-delivery.webp" alt="Espaço delivery · Boulevard Butantã" loading="lazy"></div><span class="cap">Espaço delivery</span></button><button type="button" class="slide" data-i="11" aria-label="Ampliar: Obra em andamento"><div class="ph"><img src="boulevard-obra-1.webp" alt="Obra em andamento · Boulevard Butantã" loading="lazy"></div><span class="cap">Obra em andamento</span></button><button type="button" class="slide" data-i="12" aria-label="Ampliar: Obra em andamento"><div class="ph"><img src="boulevard-obra-2.webp" alt="Obra em andamento · Boulevard Butantã" loading="lazy"></div><span class="cap">Obra em andamento</span></button></div></div>
+    
+  </div>
+</section>
+
+<section class="band-white" id="boulevard-butanta-local">
+  <div class="wrap loc">
+    <div class="addrbox"><small>Endereço</small><strong>Rua Camargo, 34 · Butantã · São Paulo/SP</strong><a class="btn-line" href="https://www.google.com/maps/search/?api=1&query=Rua+Camargo+34+Butant%C3%A3+S%C3%A3o+Paulo" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+    <div class="copy"><p class="eyebrow">Localização</p><h2 style="font-size:clamp(26px,3vw,36px)">Viver no <b>Butantã</b></h2><div class="rule"></div><p>O Boulevard fica a 240 passos da estação Butantã da Linha 4-Amarela, que leva à Faria Lima e à Paulista em poucos minutos. Pinheiros, o Shopping Eldorado, a Marginal Pinheiros e a USP ficam bem perto.</p><p class="eyebrow" style="margin-top:28px">Lazer do condomínio</p><ul class="lazer"><li>Piscina com deck</li><li>Academia</li><li>Churrasqueira gourmet</li><li>Salão de festas</li><li>Salão gourmet com terraço</li><li>Espaço convivência</li><li>Quadra poliesportiva</li><li>Playground</li><li>Espaço delivery</li><li>Hall social</li></ul></div>
+  </div>
+</section>
+<section class="lead-sec" id="boulevard-butanta-contato">
+  <div class="wrap lead-grid">
+    <div class="rv">
+      <p class="eyebrow">Atendimento exclusivo</p>
+      <h2>Gostou do <b>Boulevard Butantã</b>?</h2>
+      <p class="sub">Preencha e receba a tabela de valores e as unidades disponíveis hoje.</p>
+      <form class="lead" novalidate data-emp="Boulevard Butantã">
+        <div class="full"><label for="boulevard-butanta-nome">Nome completo</label><input id="boulevard-butanta-nome" name="nome" autocomplete="name" required></div>
+        <div><label for="boulevard-butanta-tel">WhatsApp</label><input id="boulevard-butanta-tel" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></div>
+        <div><label for="boulevard-butanta-mail">E-mail</label><input id="boulevard-butanta-mail" name="email" type="email" autocomplete="email"></div>
+        <div><label for="boulevard-butanta-planta">Planta de interesse</label><select id="boulevard-butanta-planta" name="planta"><option>83 m² · 1 suíte</option><option>106 m² · 2 suítes</option><option>106 m² · 3 dormitórios</option><option>134 m² · 2 suítes</option><option>134 m² · 3 suítes</option><option>Ainda não sei</option></select></div>
+        <div><label for="boulevard-butanta-mom">Momento da compra</label><select id="boulevard-butanta-mom" name="momento"><option>Quero comprar agora</option><option>Nos próximos 6 meses</option><option>Estou pesquisando</option></select></div>
+        <div class="full"><button class="btn-gold" type="submit" style="width:100%">Receber tabela de valores</button></div>
+        <div class="full alt">Prefere falar agora? <a href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+      </form>
+      <div class="ok" hidden><strong>Recebemos seu contato.</strong><p>Siqueira Campos vai te chamar no WhatsApp com a tabela e as unidades disponíveis. Se preferir, fale agora mesmo pelo WhatsApp (11) 96099-8000.</p></div>
+    </div>
+    <div class="rv">
+      <p class="eyebrow">O que você recebe</p>
+      <ul class="recebe">
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Tabela de valores atualizada</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Plantas e unidades disponíveis</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Condições de pagamento da construtora</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Comparativo com outros empreendimentos da região</li>
+      </ul>
+      <div class="mini"><img src="corretor.webp" alt="Foto de Siqueira Campos" loading="lazy"><div><strong>Siqueira Campos</strong><span>Corretor de Imóveis · CRECI 92522-F</span><em>Resposta rápida no horário comercial</em></div></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a></div>
   </div>
 </section>
 </main>
@@ -949,7 +1053,7 @@ a.to-pl:hover{color:var(--gold)}
 <section>
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
-    <div class="grid"><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a></div>
   </div>
 </section>
 </main>
@@ -1051,7 +1155,7 @@ a.to-pl:hover{color:var(--gold)}
 <section>
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
-    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a></div>
   </div>
 </section>
 </main>
@@ -1067,7 +1171,7 @@ a.to-pl:hover{color:var(--gold)}
 <section style="padding-block:clamp(44px,6vw,80px)">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Empreendimentos</p><h2>Apartamentos em <b>Butantã</b></h2></div><span class="b-count">2 empreendimentos</span></div>
-    <div class="grid"><a class="card rv" href="https://www.dialogobutanta.com.br/" target="_blank" rel="noopener"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Camargo, 34</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a></div>
   </div>
 </section>
 <section class="band-white">
@@ -1338,6 +1442,7 @@ a.to-pl:hover{color:var(--gold)}
   function go(key){
     if(key.indexOf('gravura')>-1){location.hash='gravura-perdizes';return}
     if(key.indexOf('metropolitan')>-1||key.indexOf('grand')>-1){location.hash='grand-metropolitan-butanta';return}
+    if(key.indexOf('boulevard')>-1){location.hash='boulevard-butanta';return}
     var BS={butanta:'butanta',boulevard:'butanta',pinheiros:'pinheiros',perdizes:'perdizes',itaim:'itaim-bibi',moema:'moema'}, bk=null;
     Object.keys(BS).forEach(function(k){ if(!bk && key.indexOf(k)>-1) bk=BS[k]; });
     if(bk && document.getElementById('pg-bairro-'+bk)){location.hash='bairro-'+bk;return}

@@ -7,8 +7,9 @@
 <link rel="canonical" href="https://www.siqueiracamposimoveis.com.br/">
 <meta name="theme-color" content="#0F1E38">
 <link rel="icon" type="image/png" href="/favicon.png">
-<link rel="preload" as="image" href="sp-ponte.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="sp-ponte-m.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" href="sp-ponte.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="montserrat-latin-300-normal.woff2" crossorigin>
 <link rel="apple-touch-icon" href="/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Siqueira Campos Imóveis">
@@ -18,10 +19,7 @@
 <meta property="og:url" content="https://www.siqueiracamposimoveis.com.br/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Siqueira Campos Investimento e Soluções Imobiliárias","url":"https://www.siqueiracamposimoveis.com.br/","telephone":"+55-11-96099-8000","email":"contato@siqueiracamposimoveis.com.br","address":{"@type":"PostalAddress","streetAddress":"Rua dos Pinheiros, 623, 8º andar","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"areaServed":["Butantã","Pinheiros","Perdizes","Itaim Bibi","Moema"],"sameAs":["https://www.instagram.com/siqueiracamposimoveis/"]}</script>
 <title>Siqueira Campos Imóveis</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap">
-<style>
+<style>@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(montserrat-latin-200-normal.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(montserrat-latin-300-normal.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(montserrat-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(montserrat-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(montserrat-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(montserrat-latin-300-italic.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(cormorant-garamond-latin-500-normal.woff2) format('woff2')}
 /* Layout: editorial luxury — full-bleed photo hero, then alternating image/text bands on a cool off-white, thin type with bold accents (estilo MBRAS, marca Siqueira Campos) */
 :root{
   --bg:#F7F8FA;          /* fundo gelo */
@@ -448,6 +446,15 @@ form.lead .alt a{color:#F0DCA6}
 .vcta strong{display:block;font-size:22px;font-weight:300}
 .vcta p{margin:6px 0 0;color:rgba(255,255,255,.88);max-width:none;padding:0}
 .vcta p b{color:#F0DCA6;font-weight:500}
+/* links de metragem e planta */
+a.to-pl{color:inherit;text-decoration:underline;text-decoration-color:var(--gold-soft);text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:500}
+a.to-pl:hover{color:var(--gold)}
+.e-hero a.to-pl{color:#F0DCA6;text-decoration-color:rgba(240,220,166,.6)}
+.ficha li.lk{padding:0}
+.ficha li.lk a{display:flex;align-items:center;gap:14px;padding:26px 18px;width:100%;color:inherit;text-decoration:none;transition:background .25s}
+.ficha li.lk a:hover{background:rgba(201,165,92,.12)}
+.ficha li.lk span{border-bottom:1px solid var(--gold-soft)}
+@media (max-width:560px){.ficha li.lk a{padding:18px 12px}}
 /* ===== Carrosséis (Decorado · Plantas · Áreas comuns) ===== */
 .car-sec{padding-block:clamp(56px,7vw,96px)}
 .car-sec+.car-sec{padding-top:0}
@@ -550,6 +557,24 @@ form.lead .alt a{color:#F0DCA6}
   .gal button span{opacity:1;font-size:11px}
 }
 
+/* ===== Bairros: toque dourado discreto ===== */
+.bairros .bairro::before{content:"";position:absolute;left:22px;top:-1px;width:44px;height:3px;background:linear-gradient(90deg,#C9A55C,#E6CB8A);transition:width .4s}
+.bairros .bairro:hover::before{width:calc(100% - 44px)}
+.bairros .bairro:hover{background:var(--paper);box-shadow:inset 0 0 0 1px rgba(201,165,92,.55)}
+.bairros .bairro h3{transition:color .3s}
+.bairros .bairro:hover h3{color:#A9853F}
+@media (max-width:980px){.bairros .bairro::before{left:22px}}
+
+/* ===== Celular: aviso de cookies compacto (não cobre a tela nem o WhatsApp) ===== */
+@media (max-width:700px){
+  .cookie{left:0;right:0;bottom:0;transform:none;width:100%;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));text-align:left;display:grid;grid-template-columns:1fr;gap:10px;box-shadow:0 -8px 30px rgba(15,30,56,.18)}
+  .cookie svg{display:none}
+  .cookie p{margin:0;font-size:13.5px;line-height:1.5}
+  .cookie .row{justify-content:stretch;gap:10px}
+  .cookie button{flex:1;width:auto;padding:12px 0}
+  body:has(.cookie:not([hidden])) .fab{bottom:calc(200px + env(safe-area-inset-bottom,0px))}
+}
+
 /* ===== Celular: leitura reforçada (texto mais escuro e mais encorpado) ===== */
 @media (max-width:980px){
   :root{--muted:#3A4254}
@@ -569,7 +594,7 @@ form.lead .alt a{color:#F0DCA6}
   footer,footer p,footer a{font-weight:400}
 }
 
-</style>
+@media (max-width:700px){.hero .bg.on.first{background-image:url(sp-ponte-m.webp)!important}}</style>
 </head>
 <body>
 
@@ -607,11 +632,11 @@ form.lead .alt a{color:#F0DCA6}
 <main id="pg-home">
 <section class="hero" id="inicio" style="padding-block:0">
   <div class="ph" id="heroPh">
-    <div class="bg on" style="background-image:url(sp-ponte.webp)" role="img" aria-label="Vista aérea de São Paulo com a Marginal Pinheiros" data-cap="São Paulo"></div>
-    <div class="bg" style="background-image:url(sp-marginal.webp)" role="img" aria-label="Prédios à beira da Marginal Pinheiros" data-cap="Zona Oeste"></div>
-    <div class="bg" style="background-image:url(hero.webp)" role="img" aria-label="Fachada do Boulevard Butantã à noite" data-cap="Butantã" data-sub="Boulevard Butantã"></div>
-    <div class="bg" style="background-image:url(moema.webp)" role="img" aria-label="Vista de Moema com o Parque Ibirapuera" data-cap="Moema"></div>
-    <div class="bg" style="background-image:url(epic-cyrela.webp)" role="img" aria-label="Terraço do Epic, da Cyrela, com vista para a cidade" data-cap="Pinheiros · Jardim Europa" data-sub="Epic · Cyrela"></div>
+    <div class="bg on first" style="background-image:url(sp-ponte.webp)" role="img" aria-label="Vista aérea de São Paulo com a Marginal Pinheiros" data-cap="São Paulo"></div>
+    <div class="bg" data-bg="sp-marginal.webp" data-bgm="sp-marginal-m.webp" role="img" aria-label="Prédios à beira da Marginal Pinheiros" data-cap="Zona Oeste"></div>
+    <div class="bg" data-bg="hero.webp" data-bgm="hero-m.webp" role="img" aria-label="Fachada do Boulevard Butantã à noite" data-cap="Butantã" data-sub="Boulevard Butantã"></div>
+    <div class="bg" data-bg="moema.webp" data-bgm="moema-m.webp" role="img" aria-label="Vista de Moema com o Parque Ibirapuera" data-cap="Moema"></div>
+    <div class="bg" data-bg="epic-cyrela.webp" data-bgm="epic-cyrela-m.webp" role="img" aria-label="Terraço do Epic, da Cyrela, com vista para a cidade" data-cap="Pinheiros · Jardim Europa" data-sub="Epic · Cyrela"></div>
   </div>
   <div class="wrap">
     <h1>O seu próximo <em>endereço</em> em São Paulo</h1>
@@ -842,7 +867,7 @@ form.lead .alt a{color:#F0DCA6}
       <span class="status">Pronto para morar</span>
       <h1>GRAVURA <b>Perdizes</b></h1>
       <div class="addr">Rua Aimberê, 2022 · Perdizes · São Paulo/SP · 01258-020</div>
-      <p class="lead">Apartamentos de 157 m² prontos para morar, com plantas flexíveis e lazer completo no coração de Perdizes.</p>
+      <p class="lead">Apartamentos de <a class="to-pl" href="#gravura-perdizes-plantas">157 m²</a> prontos para morar, com <a class="to-pl" href="#gravura-perdizes-plantas">plantas flexíveis</a> e lazer completo no coração de Perdizes.</p>
     </div>
     <div class="pricebox">
       <small>À venda a partir de</small>
@@ -853,7 +878,7 @@ form.lead .alt a{color:#F0DCA6}
   </div>
   <div class="e-dots"></div>
 </section>
-<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Perdizes</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Tegra</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>157 e 287 m²</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>3 a 4 quartos</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg><span>2 ou 3 suítes</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span>2 vagas</span></li></ul></div></div>
+<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Perdizes</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Tegra</span></li><li class="lk"><a href="#gravura-perdizes-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>157 e 287 m²</span></a></li><li class="lk"><a href="#gravura-perdizes-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>3 a 4 quartos</span></a></li><li class="lk"><a href="#gravura-perdizes-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg><span>2 ou 3 suítes</span></a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span>2 vagas</span></li></ul></div></div>
 <nav class="e-nav" aria-label="Seções do empreendimento"><ul><li><a href="#gravura-perdizes-plantas">Plantas</a></li><li><a href="#gravura-perdizes-areas">Áreas comuns</a></li><li><a href="#gravura-perdizes-videos">Vídeos</a></li><li><a href="#gravura-perdizes-local">Localização</a></li><li style="margin-left:auto"><a class="cta" href="#gravura-perdizes-contato">Contato</a></li></ul></nav>
 <section>
   <div class="wrap split sobre">
@@ -861,13 +886,13 @@ form.lead .alt a{color:#F0DCA6}
       <p class="eyebrow">Zona Oeste · Perdizes</p>
       <h2>Conheça o <b>GRAVURA Perdizes</b></h2>
       <div class="rule"></div>
-      <p>O GRAVURA Perdizes, da Tegra, tem apartamentos de 157 m² com varanda gourmet, lavabo e hall social privativo. Pelo programa Tegra ID você escolhe a planta antes de receber as chaves: são várias opções de 4 dormitórios (2 suítes) ou 3 suítes, com cozinha fechada, americana ou com ilha. Há também cobertura duplex de 287 m² com piscina.</p><p>O prédio já está pronto e o decorado está aberto na própria torre. Você visita, compara as plantas e negocia direto com a construtora, com o meu acompanhamento do começo ao fim.</p>
-      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Decorado aberto na torre</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Negociação direta com a construtora</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Plantas personalizáveis pelo Tegra ID</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Varanda gourmet e hall social privativo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>2 vagas de garagem demarcadas</span></li></ul>
+      <p>O GRAVURA Perdizes, da Tegra, tem apartamentos de <a class="to-pl" href="#gravura-perdizes-plantas">157 m²</a> com varanda gourmet, lavabo e hall social privativo. Pelo programa Tegra ID você escolhe a <a class="to-pl" href="#gravura-perdizes-plantas">planta</a> antes de receber as chaves: são várias opções de 4 dormitórios (2 suítes) ou 3 suítes, com cozinha fechada, americana ou com ilha. Há também cobertura duplex de <a class="to-pl" href="#gravura-perdizes-plantas">287 m²</a> com piscina.</p><p>O prédio já está pronto e o decorado está aberto na própria torre. Você visita, compara as <a class="to-pl" href="#gravura-perdizes-plantas">plantas</a> e negocia direto com a construtora, com o meu acompanhamento do começo ao fim.</p>
+      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Decorado aberto na torre</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Negociação direta com a construtora</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#gravura-perdizes-plantas">Plantas personalizáveis</a> pelo Tegra ID</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Varanda gourmet e hall social privativo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>2 vagas de garagem demarcadas</span></li></ul>
       <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20GRAVURA%20Perdizes." target="_blank" rel="noopener">Agendar visita</a>
     </div>
     <div class="media rv">
       <div class="frame"><img class="px" src="gravura-fachada-vertical.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"></div>
-      <div class="stat"><div class="n">157<small>m²</small></div><div class="l">Plantas flexíveis</div></div>
+      <a class="stat" href="#gravura-perdizes-plantas" style="text-decoration:none"><div class="n">157<small>m²</small></div><div class="l">Plantas flexíveis →</div></a>
     </div>
   </div>
 </section>
@@ -937,7 +962,7 @@ form.lead .alt a{color:#F0DCA6}
       <span class="status">Pronto para morar</span>
       <h1>Grand Metropolitan <b>Butantã</b></h1>
       <div class="addr">Rua Sapetuba, 430 · Butantã · São Paulo/SP</div>
-      <p class="lead">Apartamentos de 73 a 120 m² prontos para morar, a 350 metros da estação Butantã da Linha 4-Amarela.</p>
+      <p class="lead">Apartamentos de <a class="to-pl" href="#grand-metropolitan-butanta-plantas">73 a 120 m²</a> prontos para morar, a 350 metros da estação Butantã da Linha 4-Amarela.</p>
     </div>
     <div class="pricebox">
       <small>Valores e condições</small>
@@ -948,7 +973,7 @@ form.lead .alt a{color:#F0DCA6}
   </div>
   <div class="e-dots"></div>
 </section>
-<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Diálogo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM4 10h16M8 14h.01M16 14h.01M8 21l2-4M16 21l-2-4"/></svg><span>350 m do metrô</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>73, 90 e 120 m²</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>2 ou 3 dormitórios</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg><span>Até 3 suítes</span></li></ul></div></div>
+<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Diálogo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM4 10h16M8 14h.01M16 14h.01M8 21l2-4M16 21l-2-4"/></svg><span>350 m do metrô</span></li><li class="lk"><a href="#grand-metropolitan-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>73, 90 e 120 m²</span></a></li><li class="lk"><a href="#grand-metropolitan-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>2 ou 3 dormitórios</span></a></li><li class="lk"><a href="#grand-metropolitan-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg><span>Até 3 suítes</span></a></li></ul></div></div>
 <nav class="e-nav" aria-label="Seções do empreendimento"><ul><li><a href="#grand-metropolitan-butanta-decorado">Decorado</a></li><li><a href="#grand-metropolitan-butanta-plantas">Plantas</a></li><li><a href="#grand-metropolitan-butanta-areas">Áreas comuns</a></li><li><a href="#grand-metropolitan-butanta-videos">Vídeos</a></li><li><a href="#grand-metropolitan-butanta-local">Localização</a></li><li style="margin-left:auto"><a class="cta" href="#grand-metropolitan-butanta-contato">Contato</a></li></ul></nav>
 <section>
   <div class="wrap split sobre">
@@ -956,13 +981,13 @@ form.lead .alt a{color:#F0DCA6}
       <p class="eyebrow">Zona Oeste · Butantã</p>
       <h2>Conheça o <b>Grand Metropolitan Butantã</b></h2>
       <div class="rule"></div>
-      <p>O Grand Metropolitan Butantã tem apartamentos de 73, 90 e 120 m², com opções de 2 e 3 dormitórios com suíte ou até 3 suítes. Todas as plantas têm terraço, e há unidades com terraço descoberto.</p><p>O prédio, da Diálogo, está pronto na Rua Sapetuba, a 350 metros do metrô Butantã e a 5 minutos do Shopping Eldorado, com acesso fácil à Marginal Pinheiros. O lazer completo inclui piscinas, fitness, coworking e pet place. Eu te acompanho na visita, na escolha da unidade e na negociação.</p>
-      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>350 m do metrô Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Plantas de 73 a 120 m²</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Opções de 2 e 3 dormitórios ou 3 suítes</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Terraço em todas as plantas</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Piscina, fitness, coworking e pet place</span></li></ul>
+      <p>O Grand Metropolitan Butantã tem apartamentos de <a class="to-pl" href="#grand-metropolitan-butanta-plantas">73, 90 e 120 m²</a>, com opções de 2 e 3 dormitórios com suíte ou até 3 suítes. Todas as <a class="to-pl" href="#grand-metropolitan-butanta-plantas">plantas</a> têm terraço, e há unidades com terraço descoberto.</p><p>O prédio, da Diálogo, está pronto na Rua Sapetuba, a 350 metros do metrô Butantã e a 5 minutos do Shopping Eldorado, com acesso fácil à Marginal Pinheiros. O lazer completo inclui piscinas, fitness, coworking e pet place. Eu te acompanho na visita, na escolha da unidade e na negociação.</p>
+      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>350 m do metrô Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#grand-metropolitan-butanta-plantas">Plantas</a> de <a class="to-pl" href="#grand-metropolitan-butanta-plantas">73 a 120 m²</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Opções de 2 e 3 dormitórios ou 3 suítes</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Terraço em todas as <a class="to-pl" href="#grand-metropolitan-butanta-plantas">plantas</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Piscina, fitness, coworking e pet place</span></li></ul>
       <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20Grand%20Metropolitan%20Butant%C3%A3." target="_blank" rel="noopener">Agendar visita</a>
     </div>
     <div class="media rv">
       <div class="frame"><img class="px" src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"></div>
-      <div class="stat"><div class="n">350<small>m</small></div><div class="l">Do metrô Butantã</div></div>
+      <a class="stat" href="#grand-metropolitan-butanta-local" style="text-decoration:none"><div class="n">350<small>m</small></div><div class="l">Do metrô Butantã →</div></a>
     </div>
   </div>
 </section>
@@ -1396,6 +1421,7 @@ form.lead .alt a{color:#F0DCA6}
 })();
 </script>
 
-
+<script>(function(){function go(){var m=innerWidth<=700;document.querySelectorAll('.hero [data-bg]').forEach(function(e){e.style.backgroundImage='url('+(m&&e.dataset.bgm?e.dataset.bgm:e.dataset.bg)+')'})}
+if(document.readyState==='complete')setTimeout(go,800);else addEventListener('load',function(){setTimeout(go,800)})})();</script>
 </body>
 </html>

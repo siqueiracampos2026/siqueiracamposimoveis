@@ -308,6 +308,23 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
   .rv.off{transform:none;opacity:1}
 }
 
+/* título com bairro girando (substitui os quadradinhos de bairro) */
+.hero h1 .rot{display:inline-block;position:relative;color:#F0DCA6;white-space:nowrap}
+.hero h1 .rot-w{display:inline-block;transition:opacity .45s ease,transform .45s ease}
+.hero h1 .rot-w.out{opacity:0;transform:translateY(14px)}
+.hero h1 .rot::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:2px;background:linear-gradient(90deg,#C9A55C,#E6CB8A)}
+.hero::after{background:linear-gradient(90deg,rgba(9,18,36,.62),rgba(9,18,36,.18) 65%,rgba(9,18,36,0)),linear-gradient(180deg,rgba(9,18,36,.55) 0%,rgba(9,18,36,.15) 35%,rgba(9,18,36,.72) 100%)}
+@media (max-width:700px){.hero .wrap{padding-bottom:215px!important}}
+.hero h1{font-weight:300}.hero p.sub{font-weight:400;opacity:1}.tabs button{color:rgba(255,255,255,.82)}
+
+/* bloco "Quem atende": fotos dos decorados passando */
+.dslide{position:relative}
+.dslide .ds{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;display:block}
+.dslide .ds.on{opacity:1;z-index:1}
+.dslide .ds img{width:100%;height:118%;object-fit:cover}
+.dslide .dcap{position:absolute;left:0;right:0;top:0;padding:16px 22px 46px;color:#fff;font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;background:linear-gradient(0deg,transparent,rgba(9,18,36,.72))}
+.split .media .stat{z-index:2}
+
 /* ===== Modelo 3 · empreendimento ===== */
 .e-hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:var(--navy)}
 .e-hero .ph{position:absolute;inset:-10% 0 0 0;will-change:transform}
@@ -581,8 +598,8 @@ a.to-pl:hover{color:var(--gold)}
   body:has(.cookie:not([hidden])) .fab{bottom:calc(200px + env(safe-area-inset-bottom,0px))}
 }
 
-/* ===== Celular: leitura reforçada (texto mais escuro e mais encorpado) ===== */
-@media (max-width:980px){
+/* ===== Leitura reforçada em TODAS as telas (celular, notebook e computador) ===== */
+@media all{
   :root{--muted:#3A4254}
   body{font-weight:400;color:#141B2B}
   .copy p,.b-sobre p,.bairro p,.card .meta,.pl p,.planta p,.vid p,.empty p,.hlist li,.policy p,.policy li{color:#3A4254;font-weight:400}
@@ -599,6 +616,23 @@ a.to-pl:hover{color:var(--gold)}
   .pricebox small,.pricebox em{color:#3A4254}
   footer,footer p,footer a{font-weight:400}
 }
+
+/* ===== Auditoria 06/10: tamanho mínimo e contraste ===== */
+body{font-size:17px}
+.copy p,.b-sobre p,.bairro p,.slide p,.hlist li,.policy p,.policy li{font-size:17px;line-height:1.75}
+.card .meta,.pl p,.planta p,.vid p{font-size:15px}
+.eyebrow{font-size:13px}
+.bairro .z,.policy .upd{color:#7A5A22;font-weight:600;font-size:12.5px}
+.pl .m,.planta .m{color:#7A5A22;font-weight:600;font-size:13px}
+.stat .l,.car-head .cnt,.car-note,.b-count{font-size:13.5px;color:#3A4254}
+.lazer li,.lazer a.to-foto{font-size:15px}
+.ficha li{font-size:15.5px}
+.card .price{font-size:16px}
+.card .tag,.e-hero .status,.card .loc{font-size:12.5px;font-weight:600}
+form.lead label{font-size:13px}
+.pricebox small,.pricebox em,.mini small{font-size:12.5px}
+.slide .cap,.car .slide .cap{font-size:13.5px}
+.btn-gold,.btn-line,.link{font-size:13.5px}
 
 @media (max-width:700px){.hero .bg.on.first{background-image:url(sp-ponte-m.webp)!important}}</style>
 </head>
@@ -645,7 +679,7 @@ a.to-pl:hover{color:var(--gold)}
     <div class="bg" data-bg="epic-cyrela.webp" data-bgm="epic-cyrela-m.webp" role="img" aria-label="Terraço do Epic, da Cyrela, com vista para a cidade" data-cap="Pinheiros · Jardim Europa" data-sub="Epic · Cyrela"></div>
   </div>
   <div class="wrap">
-    <h1>O seu próximo <em>endereço</em> em São Paulo</h1>
+    <h1>O seu próximo <em>endereço</em> em <span class="rot" aria-live="polite"><span class="rot-w">São Paulo</span></span></h1>
     <p class="sub">Lançamentos e apartamentos selecionados na Zona Oeste e Zona Sul, com atendimento direto do corretor.</p>
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" id="t1">Lançamentos</button>
@@ -656,13 +690,7 @@ a.to-pl:hover{color:var(--gold)}
       <input id="q" type="search" placeholder="Buscar por bairro ou empreendimento…" autocomplete="off">
       <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
     </form>
-    <div class="chips">
-      <a href="#bairro-butanta" data-b="butanta">Butantã</a>
-      <a href="#bairro-pinheiros" data-b="pinheiros">Pinheiros</a>
-      <a href="#bairro-perdizes" data-b="perdizes">Perdizes</a>
-      <a href="#bairro-itaim-bibi" data-b="itaim">Itaim Bibi</a>
-      <a href="#bairro-moema" data-b="moema">Moema</a>
-    </div>
+
   </div>
   <div class="hero-dots"><span class="cap" id="heroCap">São Paulo</span><span class="csub" id="heroSub"></span><div class="ln" id="heroDots"></div></div>
 </section>
@@ -692,7 +720,7 @@ a.to-pl:hover{color:var(--gold)}
       <a class="card rv" href="#green-view-butanta">
         <div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div>
         <h3>Green View Residence</h3>
-        <div class="meta">Butantã · Lavvi · 132 e 159 m² · 2 ou 3 suítes</div>
+        <div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div>
         <div class="price">A partir de <b>R$ 1,99 milhão</b></div>
       </a>
       <a class="card rv" href="#gravura-perdizes">
@@ -781,7 +809,7 @@ a.to-pl:hover{color:var(--gold)}
 <section id="sobre">
   <div class="wrap split rev">
     <div class="media rv">
-      <div class="frame"><img class="px" src="sala.webp" alt="Sala de jantar integrada à cozinha gourmet do decorado" loading="lazy"></div>
+      <div class="frame dslide"><a class="ds on" href="#boulevard-butanta" aria-label="Decorado · Boulevard Butantã"><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="dcap">Decorado · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Decorado · Grand Metropolitan"><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="dcap">Decorado · Grand Metropolitan</span></a><a class="ds" href="#boulevard-butanta" aria-label="Varanda gourmet · Boulevard Butantã"><img class="px" src="boulevard-decorado-varanda-gourmet.webp" alt="Varanda gourmet · Boulevard Butantã" loading="lazy"><span class="dcap">Varanda gourmet · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Terraço gourmet · Grand Metropolitan"><img class="px" src="grand-metropolitan-decorado-terraco-gourmet.webp" alt="Terraço gourmet · Grand Metropolitan" loading="lazy"><span class="dcap">Terraço gourmet · Grand Metropolitan</span></a><a class="ds" href="#green-view-butanta" aria-label="Salão de festas · Green View"><img class="px" src="green-view-salao-festas.webp" alt="Salão de festas · Green View" loading="lazy"><span class="dcap">Salão de festas · Green View</span></a><a class="ds" href="#boulevard-butanta" aria-label="Dormitório · Boulevard Butantã"><img class="px" src="boulevard-decorado-dormitorio-home-office.webp" alt="Dormitório · Boulevard Butantã" loading="lazy"><span class="dcap">Dormitório · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Cozinha · Grand Metropolitan"><img class="px" src="grand-metropolitan-decorado-cozinha.webp" alt="Cozinha · Grand Metropolitan" loading="lazy"><span class="dcap">Cozinha · Grand Metropolitan</span></a><a class="ds" href="#green-view-butanta" aria-label="Hall social · Green View"><img class="px" src="green-view-hall-social.webp" alt="Hall social · Green View" loading="lazy"><span class="dcap">Hall social · Green View</span></a></div>
       <div class="stat"><div class="n">89<small>%</small></div><div class="l">Vendido · Boulevard</div></div>
     </div>
     <div class="copy rv">
@@ -968,7 +996,7 @@ a.to-pl:hover{color:var(--gold)}
 <section>
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
-    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 2 ou 3 suítes</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
   </div>
 </section>
 </main>
@@ -1063,7 +1091,7 @@ a.to-pl:hover{color:var(--gold)}
 <section>
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
-    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 2 ou 3 suítes</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
   </div>
 </section>
 </main>
@@ -1165,7 +1193,7 @@ a.to-pl:hover{color:var(--gold)}
 <section>
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Continue explorando</p><h2>Outros <b>empreendimentos</b></h2></div><a class="link" href="#empreendimentos">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
-    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 2 ou 3 suítes</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="boulevard-fachada.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · Diálogo · 83, 106 e 134 m² · 240 passos do metrô</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#gravura-perdizes"><div class="loc">Perdizes</div><div class="img"><img src="gravura-fachada.webp" alt="Fachada do GRAVURA Perdizes" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>GRAVURA Perdizes</h3><div class="meta">Perdizes · Tegra · 157 m² · 3 a 4 quartos</div><div class="price">A partir de <b>R$ 2,88 milhões</b></div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
   </div>
 </section>
 </main>
@@ -1178,7 +1206,7 @@ a.to-pl:hover{color:var(--gold)}
       <span class="status">Pronto para morar</span>
       <h1>Green View <b>Residence</b></h1>
       <div class="addr">Rua Alvarenga, 1260 · Butantã · São Paulo/SP</div>
-      <p class="lead">Apartamentos de <a class="to-pl" href="#green-view-butanta-plantas">132 e 159 m²</a> prontos para morar no Butantã, com <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">piscina com raia</a> de 25 m, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">quadra de tênis</a> e lazer completo.</p>
+      <p class="lead">Apartamentos de alto padrão de <a class="to-pl" href="#green-view-butanta-plantas">132 e 159 m²</a> no Butantã, a 350 m do metrô e 650 m da USP, prontos para morar.</p>
     </div>
     <div class="pricebox">
       <small>À venda a partir de</small>
@@ -1189,7 +1217,7 @@ a.to-pl:hover{color:var(--gold)}
   </div>
   <div class="e-dots"></div>
 </section>
-<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Lavvi</span></li><li class="lk"><a href="#green-view-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>132 e 159 m²</span></a></li><li class="lk"><a href="#green-view-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>3 ou 4 dormitórios</span></a></li><li class="lk"><a href="#green-view-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3ZM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2"/></svg><span>2 ou 3 suítes</span></a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span>2 ou 3 vagas</span></li></ul></div></div>
+<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Lavvi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM4 10h16M8 14h.01M16 14h.01M8 21l2-4M16 21l-2-4"/></svg><span>350 m do metrô</span></li><li class="lk"><a href="#green-view-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span>132 e 159 m²</span></a></li><li class="lk"><a href="#green-view-butanta-plantas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7M21 18v-5a3 3 0 0 0-3-3H10v8M3 14h18M6.5 11.5a1.5 1.5 0 1 0 0-.01"/></svg><span>3 suítes ou 4 dormitórios</span></a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span>2 ou 3 vagas</span></li></ul></div></div>
 <nav class="e-nav" aria-label="Seções do empreendimento"><ul><li><a href="#green-view-butanta-plantas">Plantas</a></li><li><a href="#green-view-butanta-areas">Áreas comuns</a></li><li><a href="#green-view-butanta-videos">Vídeos</a></li><li><a href="#green-view-butanta-local">Localização</a></li><li style="margin-left:auto"><a class="cta" href="#green-view-butanta-contato">Contato</a></li></ul></nav>
 <section>
   <div class="wrap split sobre">
@@ -1197,20 +1225,20 @@ a.to-pl:hover{color:var(--gold)}
       <p class="eyebrow">Zona Oeste · Butantã</p>
       <h2>Conheça o <b>Green View Residence</b></h2>
       <div class="rule"></div>
-      <p>O Green View Residence, da Lavvi, tem apartamentos de <a class="to-pl" href="#green-view-butanta-plantas">132 e 159 m²</a> com 2 ou 3 suítes, terraço, lavabo, hall de entrada privativo e 2 ou 3 vagas. A arquitetura é do MCAA, a decoração das áreas comuns de Chris Silveira e o paisagismo de Benedito Abbud.</p><p>O prédio está pronto para morar. O lazer fica num grande pavimento com <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">piscina com raia</a> de 25 metros, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="3">pool houses</a>, <a class="to-pl to-foto" href="#green-view-butanta-areas">spa</a>, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">quadra de tênis</a>, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="15">fitness</a> com vista e espaços para as crianças. Eu te acompanho na visita, na escolha da unidade e na negociação.</p>
-      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#green-view-butanta-plantas">Plantas</a> de <a class="to-pl" href="#green-view-butanta-plantas">132 e 159 m²</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">Piscina com raia</a> de 25 m</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">Quadra de tênis</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Hall de entrada privativo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>2 ou 3 vagas de garagem</span></li></ul>
+      <p>O Green View Residence é um empreendimento de alto padrão da Lavvi na Rua Alvarenga, 1.260, no Butantã. São <a class="to-pl" href="#green-view-butanta-plantas">plantas</a> de <a class="to-pl" href="#green-view-butanta-plantas">132 m²</a> com 3 suítes e de <a class="to-pl" href="#green-view-butanta-plantas">159 m²</a> com 4 dormitórios (2 suítes) ou 3 suítes, em torre única de 38 andares com hall privativo por andar.</p><p>O diferencial é uma combinação rara na região: 38 andares com vista aberta para o cinturão verde da USP, a 350 m da estação Butantã da Linha 4-Amarela. O lazer tem <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">piscina com raia</a> de 25 metros, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="3">pool houses</a>, <a class="to-pl to-foto" href="#green-view-butanta-areas">spa</a>, <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">quadra de tênis</a> e <a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="15">fitness</a> com vista. Eu te acompanho na visita, na escolha da unidade e na negociação.</p>
+      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pronto para morar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>350 m do metrô Butantã</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>650 m da USP</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Torre única de 38 andares</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Hall privativo por andar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">Piscina com raia</a> de 25 m</span></li></ul>
       <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20Green%20View%20Residence." target="_blank" rel="noopener">Agendar visita</a>
     </div>
     <div class="media rv">
       <div class="frame"><img class="px" src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"></div>
-      <a class="stat" href="#green-view-butanta-local" style="text-decoration:none"><div class="n">25<small>m</small></div><div class="l">Piscina com raia →</div></a>
+      <a class="stat" href="#green-view-butanta-local" style="text-decoration:none"><div class="n">38<small>andares</small></div><div class="l">Vista para o verde da USP →</div></a>
     </div>
   </div>
 </section>
 <section class="car-sec car-plantas" id="green-view-butanta-plantas">
   <div class="wrap">
     <div class="car-head rv"><div><p class="eyebrow">Plantas</p><h2>Escolha a sua <b>planta</b></h2><div class="cnt">4 opções</div></div><div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
-    <div class="car" data-fotos='[["green-view-planta-132.webp", "3 dormitórios · 132 m²"], ["green-view-planta-132-decorada.webp", "3 dormitórios · 132 m² · Decorada"], ["green-view-planta-159.webp", "4 dormitórios · 159 m²"], ["green-view-planta-159-decorada.webp", "3 dormitórios · 159 m² · Decorada"]]'><div class="car-track"><div class="pl"><button type="button" class="ph" data-i="0" aria-label="Ampliar planta 3 dormitórios 132 m²"><img src="green-view-planta-132.webp" alt="Planta 3 dormitórios · 132 m² · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">132 m²</span><h3>3 dormitórios</h3><p>Suíte com closet · terraço · lavabo · área de serviço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="1" aria-label="Ampliar planta 3 dormitórios 132 m² · Decorada"><img src="green-view-planta-132-decorada.webp" alt="Planta 3 dormitórios · 132 m² · Decorada · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">132 m² · Decorada</span><h3>3 dormitórios</h3><p>Sugestão de decoração com living integrado ao terraço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="2" aria-label="Ampliar planta 4 dormitórios 159 m²"><img src="green-view-planta-159.webp" alt="Planta 4 dormitórios · 159 m² · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">159 m²</span><h3>4 dormitórios</h3><p>Suíte com closet · terraço ampliado · lavabo · área de serviço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="3" aria-label="Ampliar planta 3 dormitórios 159 m² · Decorada"><img src="green-view-planta-159-decorada.webp" alt="Planta 3 dormitórios · 159 m² · Decorada · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">159 m² · Decorada</span><h3>3 dormitórios</h3><p>Sugestão com living ampliado integrado ao terraço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div></div></div>
+    <div class="car" data-fotos='[["green-view-planta-132.webp", "3 suítes · 132 m²"], ["green-view-planta-132-decorada.webp", "3 suítes · 132 m² · Decorada"], ["green-view-planta-159.webp", "4 dormitórios · 159 m²"], ["green-view-planta-159-decorada.webp", "3 suítes · 159 m² · Decorada"]]'><div class="car-track"><div class="pl"><button type="button" class="ph" data-i="0" aria-label="Ampliar planta 3 suítes 132 m²"><img src="green-view-planta-132.webp" alt="Planta 3 suítes · 132 m² · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">132 m²</span><h3>3 suítes</h3><p>Hall privativo · terraço · lavabo · área de serviço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="1" aria-label="Ampliar planta 3 suítes 132 m² · Decorada"><img src="green-view-planta-132-decorada.webp" alt="Planta 3 suítes · 132 m² · Decorada · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">132 m² · Decorada</span><h3>3 suítes</h3><p>Sugestão de decoração com living integrado ao terraço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="2" aria-label="Ampliar planta 4 dormitórios 159 m²"><img src="green-view-planta-159.webp" alt="Planta 4 dormitórios · 159 m² · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">159 m²</span><h3>4 dormitórios</h3><p>2 suítes · hall privativo · terraço ampliado · lavabo</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div><div class="pl"><button type="button" class="ph" data-i="3" aria-label="Ampliar planta 3 suítes 159 m² · Decorada"><img src="green-view-planta-159-decorada.webp" alt="Planta 3 suítes · 159 m² · Decorada · Green View Residence" loading="lazy"></button><div class="tx"><span class="m">159 m² · Decorada</span><h3>3 suítes</h3><p>Opção com living ampliado integrado ao terraço</p><a class="btn-line" href="#green-view-butanta-contato">Receber esta planta</a></div></div></div></div>
     <p class="car-note">Plantas ilustrativas. Metragens e disponibilidade confirmadas com o corretor.</p>
   </div>
 </section><section class="car-sec band-white" id="green-view-butanta-areas">
@@ -1225,7 +1253,7 @@ a.to-pl:hover{color:var(--gold)}
 <section class="band-white" id="green-view-butanta-local">
   <div class="wrap loc">
     <div class="addrbox"><small>Endereço</small><strong>Rua Alvarenga, 1260 · Butantã · São Paulo/SP</strong><a class="btn-line" href="https://www.google.com/maps/search/?api=1&query=Rua+Alvarenga+1260+Butant%C3%A3+S%C3%A3o+Paulo" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
-    <div class="copy"><p class="eyebrow">Localização</p><h2 style="font-size:clamp(26px,3vw,36px)">Viver no <b>Butantã</b></h2><div class="rule"></div><p>O Green View fica no Butantã, perto do Instituto Butantan, da USP e da Avenida Francisco Morato, com acesso rápido à Marginal Pinheiros e a Pinheiros.</p><p class="eyebrow" style="margin-top:28px">Lazer do condomínio</p><ul class="lazer"><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">Piscina com raia de 25 m</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Piscina infantil</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="5">Pool house</a></li><li><a class="to-foto" href="#green-view-butanta-areas">SPA</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">Quadra de tênis</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="15">Fitness</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Sala de spinning</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="9">Salão de festas</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Churrasqueira</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="11">Salão de jogos</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="13">Playground</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="14">Brinquedoteca</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Pet place</a></li></ul></div>
+    <div class="copy"><p class="eyebrow">Localização</p><h2 style="font-size:clamp(26px,3vw,36px)">Viver no <b>Butantã</b></h2><div class="rule"></div><p>O Butantã é um bairro que se conecta direto com os vizinhos sem tirar o carro de casa: a estação Butantã da Linha 4-Amarela fica a 350 m e leva a Pinheiros, à Faria Lima e à Paulista em poucos minutos. A USP fica a 650 m, e o Instituto Butantan, a Avenida Francisco Morato e a Marginal Pinheiros estão bem perto.</p><p class="eyebrow" style="margin-top:28px">Lazer do condomínio</p><ul class="lazer"><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="2">Piscina com raia de 25 m</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Piscina infantil</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="5">Pool house</a></li><li><a class="to-foto" href="#green-view-butanta-areas">SPA</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="6">Quadra de tênis</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="15">Fitness</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Sala de spinning</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="9">Salão de festas</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Churrasqueira</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="11">Salão de jogos</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="13">Playground</a></li><li><a class="to-foto" href="#green-view-butanta-areas" data-sec="green-view-butanta-areas" data-i="14">Brinquedoteca</a></li><li><a class="to-foto" href="#green-view-butanta-areas">Pet place</a></li></ul></div>
   </div>
 </section>
 <section class="lead-sec" id="green-view-butanta-contato">
@@ -1238,7 +1266,7 @@ a.to-pl:hover{color:var(--gold)}
         <div class="full"><label for="green-view-butanta-nome">Nome completo</label><input id="green-view-butanta-nome" name="nome" autocomplete="name" required></div>
         <div><label for="green-view-butanta-tel">WhatsApp</label><input id="green-view-butanta-tel" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></div>
         <div><label for="green-view-butanta-mail">E-mail</label><input id="green-view-butanta-mail" name="email" type="email" autocomplete="email"></div>
-        <div><label for="green-view-butanta-planta">Planta de interesse</label><select id="green-view-butanta-planta" name="planta"><option>132 m² · 3 dormitórios</option><option>159 m² · 4 dormitórios</option><option>Ainda não sei</option></select></div>
+        <div><label for="green-view-butanta-planta">Planta de interesse</label><select id="green-view-butanta-planta" name="planta"><option>132 m² · 3 suítes</option><option>159 m² · 4 dormitórios (2 suítes)</option><option>159 m² · 3 suítes</option><option>Ainda não sei</option></select></div>
         <div><label for="green-view-butanta-mom">Momento da compra</label><select id="green-view-butanta-mom" name="momento"><option>Quero comprar agora</option><option>Nos próximos 6 meses</option><option>Estou pesquisando</option></select></div>
         <div class="full"><button class="btn-gold" type="submit" style="width:100%">Receber tabela de valores</button></div>
         <div class="full alt">Prefere falar agora? <a href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20receber%20informa%C3%A7%C3%B5es%20do%20Green%20View%20Residence." target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
@@ -1270,13 +1298,13 @@ a.to-pl:hover{color:var(--gold)}
     <nav class="crumbs" aria-label="Caminho"><a href="#inicio">Início</a><i>›</i><a href="#bairros">Bairros</a><i>›</i><span>Butantã</span></nav>
     <span class="z">Zona Oeste</span>
     <h1>Butantã</h1>
-    <p>Metrô, USP e acesso rápido a Pinheiros e à Faria Lima, com preço de metro quadrado ainda abaixo dos vizinhos.</p>
+    <p>Um bairro que se conecta direto com os vizinhos sem tirar o carro de casa: metrô, USP e Pinheiros e Faria Lima a poucos minutos.</p>
   </div>
 </section>
 <section style="padding-block:clamp(44px,6vw,80px)">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Empreendimentos</p><h2>Apartamentos em <b>Butantã</b></h2></div><span class="b-count">3 empreendimentos</span></div>
-    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Dráusio, 154</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 2 ou 3 suítes</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 83, 106 e 134 m² · Rua Dráusio, 154</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a></div>
   </div>
 </section>
 <section class="band-white">
@@ -1562,6 +1590,16 @@ a.to-pl:hover{color:var(--gold)}
   document.querySelectorAll('.chips a').forEach(function(a){a.onclick=function(e){e.preventDefault();go(a.dataset.b)}});
 })();
 </script>
+<script>(function(){
+// o nome no título acompanha a foto do topo (São Paulo, Zona Oeste, Butantã, Moema, Pinheiros)
+var e=document.querySelector('.hero .rot-w'),bgs=[].slice.call(document.querySelectorAll('.hero .bg'));if(!e||!bgs.length)return;
+var last='São Paulo';
+function cur(){var b=bgs.filter(function(x){return x.classList.contains('on')})[0];return b?(b.getAttribute('data-cap')||'São Paulo').split('·')[0].trim():'São Paulo'}
+function upd(){var w=cur();if(w===last)return;last=w;e.classList.add('out');setTimeout(function(){e.textContent=w;e.classList.remove('out')},450)}
+var mo=new MutationObserver(upd);bgs.forEach(function(b){mo.observe(b,{attributes:true,attributeFilter:['class']})});
+})();</script>
+<script>(function(){var d=[].slice.call(document.querySelectorAll('.dslide .ds'));if(d.length<2)return;var i=0;
+setInterval(function(){if(document.hidden)return;d[i].classList.remove('on');i=(i+1)%d.length;d[i].classList.add('on')},4200)})();</script>
 
 <script>
 (function(){
@@ -1633,6 +1671,7 @@ a.to-pl:hover{color:var(--gold)}
   addEventListener('hashchange',route); route();
 })();
 </script>
+
 
 <script>(function(){function go(){var m=innerWidth<=700;document.querySelectorAll('.hero [data-bg]').forEach(function(e){e.style.backgroundImage='url('+(m&&e.dataset.bgm?e.dataset.bgm:e.dataset.bg)+')'})}
 if(document.readyState==='complete')setTimeout(go,800);else addEventListener('load',function(){setTimeout(go,800)})})();</script>

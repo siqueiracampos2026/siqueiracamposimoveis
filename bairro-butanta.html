@@ -679,6 +679,24 @@ a.to-pl:hover{color:var(--gold)}
 @media (max-width:700px){.rd-desp{flex-direction:column;align-items:stretch}.rd-desp>span{border-right:0;border-bottom:1px solid rgba(201,165,92,.35);text-align:center}.rd-desp div+div{border-left:0;border-top:1px solid rgba(201,165,92,.35)}}
 .rd-list{margin:12px 0 26px!important}
 .rd-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.rd-sobre{grid-template-columns:1fr 1fr!important;align-items:center!important}
+.rd-ul{list-style:none;padding:0;margin:12px 0 26px;display:grid;gap:10px}
+.rd-ul li{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:var(--ink)}
+.rd-ul svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:4px}
+.rs{position:relative}
+.rs-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:3/4;background:var(--navy)}
+.rs-track::-webkit-scrollbar{display:none}
+.rs-s{flex:0 0 100%;margin:0;position:relative;scroll-snap-align:start}
+.rs-s img{width:100%;height:100%;object-fit:cover;display:block}
+.rs-s figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 24px 22px;background:linear-gradient(180deg,transparent,rgba(9,18,36,.85));color:#fff}
+.rs-s figcaption b{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#F0DCA6;font-weight:600}
+.rs-s figcaption span{display:block;font-size:17px;margin-top:4px}
+.rs-a{position:absolute;top:45%;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.rs-p{left:12px}.rs-n{right:12px}
+.rs-dots{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.rs-dots button{width:26px;height:3px;border:0;background:rgba(15,30,56,.2);cursor:pointer;padding:0}
+.rs-dots button.on{background:var(--gold)}
+@media (max-width:980px){.rd-sobre{grid-template-columns:1fr!important}}
 /* chamada na página inicial */
 .rd-home{background:var(--navy);color:#fff;padding:0}
 .rd-home .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:0;padding-inline:0;align-items:stretch}
@@ -1951,7 +1969,7 @@ form.lead label{font-size:13px}
 </main>
 <main id="pg-investimento-renda-zona-oeste" class="pg-sub e-page" data-title="Ativo de renda · Loja única locada · Butantã · Siqueira Campos" data-emp="Ativo de Renda Butantã" hidden>
 <section class="e-hero" style="padding-block:0">
-  <div class="ph"><div class="bg on" style="background-image:url(investimento-renda-fachada-projeto.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-fachada.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-calcada.webp)" role="img" aria-label="Fachada do prédio"></div></div>
+  <div class="ph"><div class="bg on" style="background-image:url(investimento-renda-fachada-projeto.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-foto-fachada-lateral.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-foto-entrada-principal.webp)" role="img" aria-label="Fachada do prédio"></div></div>
   <div class="wrap">
     <div>
       <nav class="crumbs" aria-label="Caminho"><a href="#inicio">Início</a><i>›</i><a href="#investimento-renda">Investimento para renda</a><i>›</i><span>Ativo de renda</span></nav>
@@ -1989,7 +2007,7 @@ form.lead label{font-size:13px}
   <div class="wrap">
     <div class="car-head rv"><div><p class="eyebrow">Fotos</p><h2>O <b>prédio</b></h2><div class="cnt">5 fotos · toque para ampliar</div></div>
       <div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
-    <div class="car" data-fotos='[["investimento-renda-fachada-projeto.webp", "Fachada das lojas (ilustração)"], ["investimento-renda-fachada.webp", "Fachada"], ["investimento-renda-calcada.webp", "Fachada e calçada"], ["investimento-renda-entrada.webp", "Entrada principal"], ["investimento-renda-fachada-2.webp", "Fachada envidraçada"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Fachada das lojas (ilustração)"><div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Fachada das lojas (ilustração) · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada das lojas (ilustração)</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Fachada"><div class="ph"><img src="investimento-renda-fachada.webp" alt="Fachada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Fachada e calçada"><div class="ph"><img src="investimento-renda-calcada.webp" alt="Fachada e calçada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada e calçada</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Entrada principal"><div class="ph"><img src="investimento-renda-entrada.webp" alt="Entrada principal · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Entrada principal</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Fachada envidraçada"><div class="ph"><img src="investimento-renda-fachada-2.webp" alt="Fachada envidraçada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada envidraçada</span></button></div></div>
+    <div class="car" data-fotos='[["investimento-renda-fachada-projeto.webp", "Fachada das lojas (ilustração)"], ["investimento-renda-foto-fachada-lateral.webp", "Fachada · prédio novo"], ["investimento-renda-foto-entrada-principal.webp", "Entrada principal · pé-direito duplo"], ["investimento-renda-foto-entrada-calcada.webp", "Entrada e calçada"], ["investimento-renda-foto-estacionamento.webp", "Entrada do estacionamento independente"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Fachada das lojas (ilustração)"><div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Fachada das lojas (ilustração) · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada das lojas (ilustração)</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Fachada · prédio novo"><div class="ph"><img src="investimento-renda-foto-fachada-lateral.webp" alt="Fachada · prédio novo · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada · prédio novo</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Entrada principal · pé-direito duplo"><div class="ph"><img src="investimento-renda-foto-entrada-principal.webp" alt="Entrada principal · pé-direito duplo · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Entrada principal · pé-direito duplo</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Entrada e calçada"><div class="ph"><img src="investimento-renda-foto-entrada-calcada.webp" alt="Entrada e calçada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Entrada e calçada</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Entrada do estacionamento independente"><div class="ph"><img src="investimento-renda-foto-estacionamento.webp" alt="Entrada do estacionamento independente · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Entrada do estacionamento independente</span></button></div></div>
     <p class="car-note">Endereço e documentação completos enviados somente com contrato.</p>
   </div>
 </section>
@@ -2002,7 +2020,7 @@ form.lead label{font-size:13px}
   </div>
 </section>
 <section id="investimento-renda-zona-oeste-sobre">
-  <div class="wrap split sobre">
+  <div class="wrap split sobre rd-sobre">
     <div class="copy rv">
       <p class="eyebrow">Investimento institucional</p>
       <h2>Seu patrimônio trabalhando, <b>sem dor de cabeça</b></h2>
@@ -2010,14 +2028,14 @@ form.lead label{font-size:13px}
       <p>Imóvel bom é aquele que se paga sozinho. Prédio comercial novo no Butantã, perto do Metrô Butantã, da USP e das principais vias de São Paulo.</p>
       <p>Já reformado sob medida para o locatário e em plena operação: sem obra, sem vacância e sem procurar inquilino. A renda começa no primeiro dia.</p>
       <p class="eyebrow" style="margin-top:30px">O imóvel</p>
-      <ul class="hlist rd-list">
+      <ul class="rd-ul">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#investimento-renda-zona-oeste-plantas">Loja única de 1.674,88 m²</a> (4 lojas integradas)</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pé-direito duplo</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span><a class="to-pl" href="#investimento-renda-zona-oeste-plantas">Estacionamento independente</a> · cerca de 28 vagas</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Terreno de aproximadamente 2.090&nbsp;m²</span></li>
       </ul>
       <p class="eyebrow">A locação</p>
-      <ul class="hlist rd-list">
+      <ul class="rd-ul">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Locatário público, 100% locado</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Renda de R$ 115 mil por mês</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Contrato de 5 anos + renovação por 5</span></li>
@@ -2025,8 +2043,10 @@ form.lead label{font-size:13px}
       </ul>
       <div class="rd-acts"><a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20tenho%20interesse%20no%20ativo%20de%20renda%20%28loja%20%C3%BAnica%20locada%29%20no%20Butant%C3%A3.%20Quero%20receber%20o%20material%20completo." target="_blank" rel="noopener">Consultar valores</a><a class="btn-line" href="#investimento-renda-zona-oeste-plantas">Ver as plantas</a></div>
     </div>
-    <div class="media rv">
-      <div class="frame"><img class="px" src="investimento-renda-fachada-projeto.webp" alt="Fachada da loja" loading="lazy"></div>
+    <div class="media rv rs">
+      <div class="rs-track"><figure class="rs-s"><img src="investimento-renda-foto-entrada-principal.webp" alt="Entrada principal" loading="lazy"><figcaption><b>Entrada principal</b><span>Pé-direito duplo e fachada envidraçada</span></figcaption></figure><figure class="rs-s"><img src="investimento-renda-foto-fachada-lateral.webp" alt="Prédio novo" loading="lazy"><figcaption><b>Prédio novo</b><span>Fachada com vitrines para a rua</span></figcaption></figure><figure class="rs-s"><img src="investimento-renda-foto-entrada-calcada.webp" alt="Fachada e calçada" loading="lazy"><figcaption><b>Fachada e calçada</b><span>Calçada ampla e arborizada</span></figcaption></figure><figure class="rs-s"><img src="investimento-renda-foto-estacionamento.webp" alt="Estacionamento" loading="lazy"><figcaption><b>Estacionamento</b><span>Entrada independente · cerca de 28 vagas</span></figcaption></figure></div>
+      <button type="button" class="rs-a rs-p" aria-label="Foto anterior">‹</button><button type="button" class="rs-a rs-n" aria-label="Próxima foto">›</button>
+      <div class="rs-dots"><button type="button" aria-label="Foto 1"></button><button type="button" aria-label="Foto 2"></button><button type="button" aria-label="Foto 3"></button><button type="button" aria-label="Foto 4"></button></div>
     </div>
   </div>
 </section>
@@ -2077,6 +2097,11 @@ form.lead label{font-size:13px}
     </div>
   </div>
 </section>
+<script>(function(){var r=document.querySelector('#pg-investimento-renda-zona-oeste .rs');if(!r)return;var t=r.querySelector('.rs-track'),d=[].slice.call(r.querySelectorAll('.rs-dots button'));
+function i(){return Math.round(t.scrollLeft/t.clientWidth)}function u(){var k=i();d.forEach(function(b,j){b.classList.toggle('on',j===k)})}
+function go(k){var n=d.length;k=(k+n)%n;t.scrollTo({left:k*t.clientWidth,behavior:'smooth'})}
+r.querySelector('.rs-p').onclick=function(){go(i()-1)};r.querySelector('.rs-n').onclick=function(){go(i()+1)};d.forEach(function(b,j){b.onclick=function(){go(j)}});
+t.addEventListener('scroll',u,{passive:true});u()})();</script>
 </main>
 <main id="pg-bairro-butanta" class="pg-sub" data-title="Apartamentos no Butantã · Lançamentos e prontos | Siqueira Campos">
 <section class="b-hero" style="padding-block:0"><div class="bg" style="background-image:url(hero.webp)" role="img" aria-label="Butantã"></div>

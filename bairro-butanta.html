@@ -641,6 +641,58 @@ a.to-pl:hover{color:var(--gold)}
 .outros a:hover{background:rgba(201,165,92,.15)}
 @media (max-width:980px){.b-sobre{grid-template-columns:1fr}}
 
+/* ===== Ativo de renda ===== */
+.rd-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,165,92,.35);border:1px solid rgba(201,165,92,.35);margin-top:8px}
+.rd-nums div{background:var(--navy);color:#fff;padding:30px 24px;text-align:center}
+.rd-nums b{display:block;font-weight:300;font-size:clamp(26px,2.6vw,36px);color:#F0DCA6;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.rd-nums small{display:block;margin-top:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.rd-note{font-size:13px;color:rgba(255,255,255,.65);margin-top:16px;text-align:center}
+.rd-band{background:var(--navy);color:#fff}
+.rd-band h2{color:#fff}
+.rd-band .eyebrow{color:var(--gold-soft)}
+@media (max-width:820px){.rd-nums{grid-template-columns:1fr 1fr}.rd-nums div{padding:24px 14px}}
+#investimento-renda-zona-oeste-plantas{background:#fff}
+#investimento-renda-zona-oeste-plantas .slide .ph{background:#fff}
+#investimento-renda-zona-oeste-plantas .slide img{object-fit:contain;background:#fff}
+#investimento-renda-zona-oeste-plantas .car .slide{background:#fff;border:1px solid var(--line)}
+#investimento-renda-zona-oeste-plantas .car .slide .cap{position:static;display:block;padding:14px 16px;color:var(--navy);background:#fff;border-top:1px solid var(--line)}
+#investimento-renda-zona-oeste-plantas .slide .ph::after{display:none}
+.rd-visita{background:var(--paper,#fff)}
+.rd-visita .box{border:1px solid rgba(201,165,92,.55);padding:44px 48px;display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:start}
+.rd-visita ol{list-style:none;padding:0;margin:0;display:grid;gap:18px;counter-reset:p}
+.rd-visita li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:p}
+.rd-visita li::before{content:counter(p);width:44px;height:44px;border:1px solid var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px}
+.rd-visita li b{display:block;color:var(--navy);font-weight:600}
+.rd-visita .aviso{margin-top:22px;padding:14px 16px;background:var(--bg);border-left:3px solid var(--gold-soft);font-size:14.5px}
+@media (max-width:900px){.rd-visita .box{grid-template-columns:1fr;padding:30px 20px;gap:28px}}
+#pg-investimento-renda-zona-oeste .e-hero .status{font-size:15px!important;padding:10px 18px;background:var(--gold-grad);color:var(--navy);border:0;font-weight:700;letter-spacing:.14em}
+#pg-investimento-renda-zona-oeste .pricebox strong{color:var(--gold);font-weight:400}
+.rd-venda{font-size:14px;color:var(--muted);margin:-8px 0 16px}
+.rd-venda b{color:var(--navy)}
+.rd-tag{display:inline-block;background:var(--gold-grad);color:var(--navy);font-weight:700;letter-spacing:.14em;font-size:13px;padding:9px 16px;text-transform:uppercase;margin-bottom:18px}
+.rd-desp{display:flex;align-items:center;justify-content:center;gap:0;margin-top:18px;border:1px solid rgba(201,165,92,.35)}
+.rd-desp>span{padding:16px 22px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);border-right:1px solid rgba(201,165,92,.35)}
+.rd-desp div{flex:1;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#fff}
+.rd-desp div+div{border-left:1px solid rgba(201,165,92,.35)}
+.rd-desp small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.rd-desp b{font-weight:400;color:#F0DCA6}
+@media (max-width:700px){.rd-desp{flex-direction:column;align-items:stretch}.rd-desp>span{border-right:0;border-bottom:1px solid rgba(201,165,92,.35);text-align:center}.rd-desp div+div{border-left:0;border-top:1px solid rgba(201,165,92,.35)}}
+/* chamada na página inicial */
+.rd-home{background:var(--navy);color:#fff;padding:0}
+.rd-home .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:0;padding-inline:0;align-items:stretch}
+.rd-home .ph{position:relative;min-height:460px;overflow:hidden}
+.rd-home .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rd-home .txt{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.rd-home h2{color:#fff}
+.rd-home .eyebrow{color:var(--gold-soft)}
+.rd-home p{color:rgba(255,255,255,.85)}
+.rd-home ul{list-style:none;padding:0;margin:22px 0 30px;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+.rd-home li b{display:block;font-weight:300;font-size:26px;color:#F0DCA6}
+.rd-home li small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.rd-home .acts{display:flex;gap:14px;flex-wrap:wrap}
+.rd-home .btn-line{color:#fff;border-color:rgba(255,255,255,.5)}
+@media (max-width:900px){.rd-home .wrap{grid-template-columns:1fr}.rd-home .ph{min-height:300px}.rd-home .txt{padding:44px 22px}}
+
 /* ===== Celular: letras maiores e mais contraste ===== */
 @media (max-width:980px){
   :root{--muted:#535C6E}
@@ -776,7 +828,7 @@ form.lead label{font-size:13px}
       <div class="dd"><button type="button" aria-haspopup="true">Zona Sul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="dd-menu"><a href="#bairro-itaim-bibi" data-b="itaim">Itaim Bibi</a><a href="#bairro-moema" data-b="moema">Moema</a></div></div>
       <div class="dd"><button type="button" aria-haspopup="true">Empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#oportunidades">Oportunidades</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
+        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#oportunidades">Oportunidades</a><a href="#investimento-renda">Investimento para renda</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
       <a class="mlink" href="#localizacao">Localização</a>
     </nav>
     <a class="cta" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
@@ -787,6 +839,7 @@ form.lead label{font-size:13px}
   <button id="close">Fechar ✕</button>
   <a href="#empreendimentos">Empreendimentos</a>
   <a href="#oportunidades">Oportunidades</a>
+  <a href="#investimento-renda">Investimento para renda</a>
   <div class="dsub"><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a><a href="#boulevard-butanta">Boulevard Butantã</a></div>
   <a href="#bairros">Bairros</a>
   <div class="dsub"><a href="#bairro-butanta">Butantã</a><a href="#bairro-pinheiros">Pinheiros</a><a href="#bairro-perdizes">Perdizes</a><a href="#bairro-itaim-bibi">Itaim Bibi</a><a href="#bairro-moema">Moema</a></div>
@@ -953,6 +1006,20 @@ form.lead label{font-size:13px}
       </div>
       <button class="arrow next" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></button>
       <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+<section class="rd-home" id="investimento-renda">
+  <div class="wrap">
+    <div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Fachada do prédio comercial locado no Butantã" loading="lazy"></div>
+    <div class="txt rv">
+      <span class="rd-tag">Locado por R$ 115 mil/mês</span>
+      <p class="eyebrow">Investimento para renda</p>
+      <h2>Renda de <b>R$ 115 mil</b> por mês</h2>
+      <div class="rule"></div>
+      <p>Enquanto outros investimentos oscilam, este paga todo mês. Prédio comercial novo perto do Metrô Butantã: uma loja única de 1.674,88 m² com pé-direito duplo, 100% locada para um único locatário público, com contrato de 5 anos renovável por mais 5.</p>
+      <ul><li><b>1</b><small>Único locatário</small></li><li><b>≈ 28</b><small>Vagas</small></li><li><b>5 + 5</b><small>Anos de contrato</small></li><li><b>1.675 m²</b><small>Loja única locada</small></li></ul>
+      <div class="acts"><a class="btn-gold" href="#investimento-renda-zona-oeste">Conhecer o ativo</a><a class="btn-line" href="#investimento-renda-zona-oeste-plantas">Ver as plantas</a><a class="btn-line" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20tenho%20interesse%20no%20ativo%20de%20renda%20%28loja%20%C3%BAnica%20locada%29%20no%20Butant%C3%A3.%20Quero%20receber%20o%20material%20completo." target="_blank" rel="noopener">Falar no WhatsApp</a></div>
     </div>
   </div>
 </section>
@@ -1877,6 +1944,125 @@ form.lead label{font-size:13px}
   </div>
 </section>
 </main>
+<main id="pg-investimento-renda-zona-oeste" class="pg-sub e-page" data-title="Ativo de renda · Loja única locada · Butantã · Siqueira Campos" data-emp="Ativo de Renda Butantã" hidden>
+<section class="e-hero" style="padding-block:0">
+  <div class="ph"><div class="bg on" style="background-image:url(investimento-renda-fachada-projeto.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-fachada.webp)" role="img" aria-label="Fachada do prédio"></div><div class="bg" style="background-image:url(investimento-renda-calcada.webp)" role="img" aria-label="Fachada do prédio"></div></div>
+  <div class="wrap">
+    <div>
+      <nav class="crumbs" aria-label="Caminho"><a href="#inicio">Início</a><i>›</i><a href="#investimento-renda">Investimento para renda</a><i>›</i><span>Ativo de renda</span></nav>
+      <span class="status">Locado por R$ 115 mil/mês</span>
+      <h1>Ativo de <b>Renda</b></h1>
+      <div class="addr">Butantã · perto do Metrô Butantã · endereço informado mediante NDA</div>
+      <p class="lead">Renda que já entra na conta: <a class='to-pl' href='#investimento-renda-zona-oeste-plantas'>loja única de 1.674,88 m² com pé-direito duplo</a>, 100% locada para um único locatário público e em plena operação, com <a class='to-pl' href='#investimento-renda-zona-oeste-plantas'>estacionamento independente</a>, a poucos passos do Metrô Butantã.</p>
+    </div>
+    <div class="pricebox">
+      <small>Ativo locado por</small>
+      <strong>R$ 115 mil<span style="font-size:.5em">/mês</span></strong>
+      <div class="rd-venda">Valor de venda: <b>sob consulta</b></div>
+      <a class="btn-gold" href="#investimento-renda-zona-oeste-contato">Consultar valores</a>
+      <em>Material completo mediante NDA · visitas só com agendamento.</em>
+    </div>
+  </div>
+  <div class="e-dots"></div>
+</section>
+<div class="ficha"><div class="wrap" style="padding-inline:0"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Butantã · perto do metrô</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M8 8h.01M8 12h.01M8 16h.01M16 12h.01M16 16h.01M2 21h20"/></svg><span>Prédio novo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 10a4 4 0 1 0-3.5 4L9 15.5V18H6.5v2.5H4V18l6.4-6.4"/></svg><span><a class='to-pl' href='#investimento-renda-zona-oeste-plantas'>Loja única · 100% locada</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h6V3M21 15h-6v6"/></svg><span><a class='to-pl' href='#investimento-renda-zona-oeste-plantas'>1.675 m² de lojas</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17v2M19 17v2M3 13l2-6h14l2 6v4H3v-4ZM7 14h.01M17 14h.01"/></svg><span><a class='to-pl' href='#investimento-renda-zona-oeste-plantas'>≈ 28 vagas</a></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v10H3zM7 12h.01M17 12h.01"/><circle cx="12" cy="12" r="2.5"/></svg><span>R$ 115 mil/mês</span></li></ul></div></div>
+<nav class="e-nav" aria-label="Seções do ativo"><ul><li><a href="#investimento-renda-zona-oeste-numeros">Números</a></li><li><a href="#investimento-renda-zona-oeste-fotos">Fotos</a></li><li><a href="#investimento-renda-zona-oeste-plantas">Plantas</a></li><li><a href="#investimento-renda-zona-oeste-sobre">O ativo</a></li><li><a href="#investimento-renda-zona-oeste-visita">Visita</a></li><li style="margin-left:auto"><a class="cta" href="#investimento-renda-zona-oeste-contato">Contato</a></li></ul></nav>
+<section class="rd-band" id="investimento-renda-zona-oeste-numeros">
+  <div class="wrap">
+    <div class="center rv" style="margin-bottom:36px"><p class="eyebrow">Os números</p><h2>Números que <b>falam por si</b></h2></div>
+    <div class="rd-nums rv">
+      <div><b>R$ 115 mil</b><small>Renda por mês</small></div>
+      <div><a href="#investimento-renda-zona-oeste-plantas" style="text-decoration:none;color:inherit"><b>1 locatário</b><small>Loja única, 100% locada · ver plantas →</small></a></div>
+      <div><b>5 + 5 anos</b><small>Contrato + renovação</small></div>
+      <div><b>Imediata</b><small>Renda já em operação</small></div>
+    </div>
+    <div class="rd-desp rv"><span>Despesas</span><div><small>IPTU</small><b>A confirmar</b></div><div><small>Condomínio</small><b>A confirmar</b></div></div>
+    <p class="rd-note">Valor de venda sob consulta. Valores de IPTU e condomínio em levantamento; informamos assim que confirmados. Informações sujeitas a confirmação documental.</p>
+  </div>
+</section>
+<section class="car-sec" id="investimento-renda-zona-oeste-fotos">
+  <div class="wrap">
+    <div class="car-head rv"><div><p class="eyebrow">Fotos</p><h2>O <b>prédio</b></h2><div class="cnt">5 fotos · toque para ampliar</div></div>
+      <div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+    <div class="car" data-fotos='[["investimento-renda-fachada-projeto.webp", "Fachada das lojas (ilustração)"], ["investimento-renda-fachada.webp", "Fachada"], ["investimento-renda-calcada.webp", "Fachada e calçada"], ["investimento-renda-entrada.webp", "Entrada principal"], ["investimento-renda-fachada-2.webp", "Fachada envidraçada"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Fachada das lojas (ilustração)"><div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Fachada das lojas (ilustração) · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada das lojas (ilustração)</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Fachada"><div class="ph"><img src="investimento-renda-fachada.webp" alt="Fachada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Fachada e calçada"><div class="ph"><img src="investimento-renda-calcada.webp" alt="Fachada e calçada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada e calçada</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Entrada principal"><div class="ph"><img src="investimento-renda-entrada.webp" alt="Entrada principal · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Entrada principal</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Fachada envidraçada"><div class="ph"><img src="investimento-renda-fachada-2.webp" alt="Fachada envidraçada · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Fachada envidraçada</span></button></div></div>
+    <p class="car-note">Endereço e documentação completos enviados mediante acordo de confidencialidade (NDA).</p>
+  </div>
+</section>
+<section class="car-sec" id="investimento-renda-zona-oeste-plantas">
+  <div class="wrap">
+    <div class="car-head rv"><div><p class="eyebrow">Plantas</p><h2>A <b>loja</b> e as plantas</h2><div class="cnt">6 fotos · toque para ampliar</div></div>
+      <div class="car-nav"><button type="button" class="cp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="cn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+    <div class="car" data-fotos='[["investimento-renda-implantacao.webp", "Implantação · 4 lojas integradas em uma loja única"], ["investimento-renda-planta-loja-1.webp", "Loja 1 · 494,65 m²"], ["investimento-renda-planta-loja-2.webp", "Loja 2 · 305,15 m²"], ["investimento-renda-planta-loja-3.webp", "Loja 3 · 376,41 m²"], ["investimento-renda-planta-loja-4.webp", "Loja 4 · 498,67 m²"], ["investimento-renda-planta-estacionamento.webp", "Estacionamento independente · cerca de 28 vagas"]]'><div class="car-track"><button type="button" class="slide" data-i="0" aria-label="Ampliar: Implantação · 4 lojas integradas em uma loja única"><div class="ph"><img src="investimento-renda-implantacao.webp" alt="Implantação · 4 lojas integradas em uma loja única · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Implantação · 4 lojas integradas em uma loja única</span></button><button type="button" class="slide" data-i="1" aria-label="Ampliar: Loja 1 · 494,65 m²"><div class="ph"><img src="investimento-renda-planta-loja-1.webp" alt="Loja 1 · 494,65 m² · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Loja 1 · 494,65 m²</span></button><button type="button" class="slide" data-i="2" aria-label="Ampliar: Loja 2 · 305,15 m²"><div class="ph"><img src="investimento-renda-planta-loja-2.webp" alt="Loja 2 · 305,15 m² · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Loja 2 · 305,15 m²</span></button><button type="button" class="slide" data-i="3" aria-label="Ampliar: Loja 3 · 376,41 m²"><div class="ph"><img src="investimento-renda-planta-loja-3.webp" alt="Loja 3 · 376,41 m² · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Loja 3 · 376,41 m²</span></button><button type="button" class="slide" data-i="4" aria-label="Ampliar: Loja 4 · 498,67 m²"><div class="ph"><img src="investimento-renda-planta-loja-4.webp" alt="Loja 4 · 498,67 m² · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Loja 4 · 498,67 m²</span></button><button type="button" class="slide" data-i="5" aria-label="Ampliar: Estacionamento independente · cerca de 28 vagas"><div class="ph"><img src="investimento-renda-planta-estacionamento.webp" alt="Estacionamento independente · cerca de 28 vagas · Ativo de Renda Butantã" loading="lazy"></div><span class="cap">Estacionamento independente · cerca de 28 vagas</span></button></div></div>
+    <p class="car-note">Hoje as 4 lojas estão integradas e locadas como uma loja única de 1.674,88 m², para um único locatário. As plantas mostram a composição: Loja 1 com 494,65 m², Loja 2 com 305,15 m², Loja 3 com 376,41 m² e Loja 4 com 498,67 m². Mais o estacionamento independente.</p>
+  </div>
+</section>
+<section id="investimento-renda-zona-oeste-sobre">
+  <div class="wrap split sobre">
+    <div class="copy rv">
+      <p class="eyebrow">Investimento institucional</p>
+      <h2>Seu patrimônio trabalhando, <b>sem dor de cabeça</b></h2>
+      <div class="rule"></div>
+      <p>Imóvel bom é aquele que se paga sozinho. Aqui você compra um prédio comercial novo no Butantã com <a class="to-pl" href="#investimento-renda-zona-oeste-plantas">loja única de pé-direito duplo com 1.674,88 m²</a>, formada por 4 lojas integradas e locada como um único ativo, e <a class="to-pl" href="#investimento-renda-zona-oeste-plantas">estacionamento independente com cerca de 28 vagas</a>, em terreno de aproximadamente 2.090 m².</p>
+      <p>Nada de obra, vacância ou procurar inquilino: o prédio já foi reformado sob medida para o locatário (estrutura, ar-condicionado, pintura, gesso e iluminação) e está em plena operação. A renda é imediata, o contrato é de 5 anos com direito a renovação por mais 5, e o locatário é público, o que traz segurança de pagamento.</p>
+      <p>Tudo isso a poucos passos do Metrô Butantã, perto da USP, do comércio da região e das principais vias de São Paulo. Oportunidades assim raramente chegam ao mercado.</p>
+      <ul class="hlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Loja única de 1.674,88 m² (4 lojas integradas)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Locatário público</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Contrato de 5 anos + renovação por 5</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Renda de R$ 115 mil por mês</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Pé-direito duplo</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Estacionamento independente · 28 vagas</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Reformado sob medida para o locatário</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg><span>Ar-condicionado, gesso e iluminação prontos</span></li></ul>
+      <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20tenho%20interesse%20no%20ativo%20de%20renda%20%28loja%20%C3%BAnica%20locada%29%20no%20Butant%C3%A3.%20Quero%20receber%20o%20material%20completo." target="_blank" rel="noopener">Consultar valores</a> <a class="btn-line" href="#investimento-renda-zona-oeste-plantas" style="margin-left:10px">Ver as plantas</a>
+    </div>
+    <div class="media rv">
+      <div class="frame"><img class="px" src="investimento-renda-entrada.webp" alt="Entrada do prédio" loading="lazy"></div>
+      <a class="stat" href="#investimento-renda-zona-oeste-plantas" style="text-decoration:none"><div class="n">115<small>mil</small></div><div class="l">De renda por mês · ver as lojas →</div></a>
+    </div>
+  </div>
+</section>
+<section class="rd-visita" id="investimento-renda-zona-oeste-visita">
+  <div class="wrap">
+    <div class="box rv">
+      <div>
+        <p class="eyebrow">Imóvel atípico</p>
+        <h2>Visitas somente com <b>agendamento</b></h2>
+        <div class="rule"></div>
+        <p>Por ser um imóvel em plena operação, as visitas são feitas apenas com agendamento prévio, junto à incorporadora proprietária. Nosso time organiza tudo: marca a data, acompanha você na visita e conduz a negociação do começo ao fim.</p>
+        <p class="aviso">Para preservar a operação do locatário, não há visitas sem agendamento. Agende sempre pelo nosso time.</p>
+      </div>
+      <ol>
+        <li><span><b>Você fala com a gente</b>Pelo WhatsApp ou pelo formulário abaixo.</span></li>
+        <li><span><b>NDA e material completo</b>Você assina o acordo de confidencialidade e recebe valores, endereço, contrato e documentação.</span></li>
+        <li><span><b>Agendamos com a incorporadora</b>Marcamos a visita direto com a proprietária, no melhor horário para você.</span></li>
+        <li><span><b>Visita acompanhada e negociação</b>Você conhece o imóvel com o corretor Siqueira Campos e negocia com segurança.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="lead-sec" id="investimento-renda-zona-oeste-contato">
+  <div class="wrap lead-grid">
+    <div class="rv">
+      <p class="eyebrow">Atendimento reservado</p>
+      <h2>Oportunidades assim <b>não ficam paradas</b></h2>
+      <p class="sub">Receba valores, endereço, contrato de locação e documentação. Atendimento reservado: o material completo é enviado após o acordo de confidencialidade (NDA).</p>
+      <form class="lead" novalidate data-emp="Ativo de Renda Butantã">
+        <div class="full"><label for="investimento-renda-zona-oeste-nome">Nome completo</label><input id="investimento-renda-zona-oeste-nome" name="nome" autocomplete="name" required></div>
+        <div><label for="investimento-renda-zona-oeste-tel">WhatsApp</label><input id="investimento-renda-zona-oeste-tel" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></div>
+        <div><label for="investimento-renda-zona-oeste-mail">E-mail</label><input id="investimento-renda-zona-oeste-mail" name="email" type="email" autocomplete="email"></div>
+        <div><label for="investimento-renda-zona-oeste-planta">Quero</label><select id="investimento-renda-zona-oeste-planta" name="planta"><option>Consultar valores</option><option>Receber o material completo (NDA)</option><option>Agendar uma visita (com a incorporadora)</option><option>Conversar com o especialista</option></select></div>
+        <div><label for="investimento-renda-zona-oeste-mom">Perfil</label><select id="investimento-renda-zona-oeste-mom" name="momento"><option>Investidor pessoa física</option><option>Empresa / holding</option><option>Family office / fundo</option></select></div>
+        <div class="full"><button class="btn-gold" type="submit" style="width:100%">Quero o material completo</button></div>
+        <div class="full alt">Prefere falar agora? <a href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20tenho%20interesse%20no%20ativo%20de%20renda%20%28loja%20%C3%BAnica%20locada%29%20no%20Butant%C3%A3.%20Quero%20receber%20o%20material%20completo." target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+      </form>
+      <div class="ok" hidden><strong>Recebemos seu contato.</strong><p>Siqueira Campos vai te chamar no WhatsApp para enviar o NDA e o material completo. Se preferir, fale agora mesmo pelo WhatsApp (11) 96099-8000.</p></div>
+    </div>
+    <div class="rv">
+      <p class="eyebrow">O que você recebe</p>
+      <ul class="recebe">
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Valores e condições</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Endereço e fotos completas</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Contrato de locação</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Documentação do imóvel</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-10"/></svg></i>Visita agendada com a incorporadora, acompanhada pelo corretor</li>
+      </ul>
+      <div class="mini"><img src="corretor.webp" alt="Foto de Siqueira Campos" loading="lazy"><div><strong>Siqueira Campos</strong><span>Corretor de Imóveis · CRECI 92522-F</span><em>Atendimento reservado e confidencial</em></div></div>
+    </div>
+  </div>
+</section>
+</main>
 <main id="pg-bairro-butanta" class="pg-sub" data-title="Apartamentos no Butantã · Lançamentos e prontos | Siqueira Campos">
 <section class="b-hero" style="padding-block:0"><div class="bg" style="background-image:url(hero.webp)" role="img" aria-label="Butantã"></div>
   <div class="wrap">
@@ -2163,6 +2349,7 @@ form.lead label{font-size:13px}
     if(/\bode\b/.test(key)||key.indexOf('bartira')>-1){location.hash='ode-perdizes';return}
     if(key.indexOf('metropolitan')>-1||key.indexOf('grand')>-1){location.hash='grand-metropolitan-butanta';return}
     if(key.indexOf('boulevard')>-1){location.hash='boulevard-butanta';return}
+    if(/renda|investiment|comercial|loja|locad|predio|prédio/.test(key)){location.hash='investimento-renda-zona-oeste';return}
     if(key.indexOf('verdi')>-1||key.indexOf('lote 5')>-1){location.hash='verdi-butanta';return}
     if(key.indexOf('vertice')>-1||key.indexOf('vértice')>-1){location.hash='vertice-butanta';return}
     if(key.indexOf('green')>-1||key.indexOf('view')>-1||key.indexOf('lavvi')>-1){location.hash='green-view-butanta';return}

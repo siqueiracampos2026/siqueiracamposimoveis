@@ -375,6 +375,32 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
 /* celular: letras maiores nos cards (mesma paleta e fonte) */
 @media (max-width:700px){body .brow-h h3 span{font-size:16px;color:var(--navy);font-weight:500}body .card .loc{font-size:14px;letter-spacing:.22em;padding:15px 18px}body .card h3{font-size:24px}body .card .meta{font-size:15.5px;line-height:1.5}body .card .price{font-size:17px}body .card .tag{font-size:12px}}
 html,body{overflow-x:clip}
+.opp .nota{font-size:12.5px;color:var(--muted);margin:14px 0 0}
+/* auditoria de alinhamento: títulos todos à esquerda, mesma linha do resto do site */
+#oportunidades .center,#bairros .center{text-align:left}
+#oportunidades .center h2,#bairros h2,#oportunidades .center .eyebrow,#bairros .eyebrow{text-align:left}
+#bairros .bairros-tabs{justify-content:flex-start}
+#oportunidades .center{margin-bottom:36px!important}
+/* oportunidades no notebook: foto à esquerda, texto à direita — o slide inteiro cabe na tela */
+@media (min-width:981px){
+  .opp .slide{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,4vw,56px);align-items:center}
+  .opp .slide .ph{aspect-ratio:4/3}
+  .opp .slide .txt{padding:0}
+  .opp .slide h3{font-size:clamp(28px,2.8vw,38px)}
+  .opp .pills{margin:20px 0 26px}
+  .opp .slide p{font-size:16px}
+}
+@media (min-width:981px){#bairros{padding-block:64px}}
+.opp .big small{display:block;margin:6px 0 0;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.opp .big small.pre{margin:0 0 6px}
+@media (max-width:980px){.opp .arrow{transform:translateY(-50%);background:rgba(255,255,255,.92);border-radius:50%;box-shadow:0 4px 14px rgba(15,30,56,.2);top:calc((100vw - 40px)*.28125)}.opp .arrow.prev{left:8px}.opp .arrow.next{right:8px}}
+@media (max-width:700px){.opp .arrow{top:calc((100vw - 40px)*.375)}}
+@media (min-width:981px){.opp .arrow{top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(15,30,56,.18)}.opp .arrow.prev{left:-58px}.opp .arrow.next{right:-58px}}
+.opp .big{font-size:clamp(34px,4.2vw,56px);font-weight:500;line-height:1.05;margin:14px 0 4px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.opp .big small{font-size:.38em;letter-spacing:.06em;font-weight:500;-webkit-text-fill-color:var(--muted);margin:0 6px}
+/* bloco de contato (assinatura) mais enxuto: cabe inteiro na tela */
+body section.contact{padding-block:clamp(48px,5.5vw,72px) clamp(40px,4.5vw,56px)}
+body .contact .sig-wrap{margin-bottom:0}
 /* espaço entre blocos mais enxuto (notebook e celular) */
 body section{padding-block:clamp(52px,7.5vw,100px)}
 body .car-sec{padding-block:clamp(44px,5.5vw,76px)}
@@ -1035,13 +1061,38 @@ form.lead label{font-size:13px}
 <section id="oportunidades">
   <div class="wrap">
     <div class="center rv" style="margin-bottom:56px">
-      <p class="eyebrow">Oportunidade exclusiva</p>
-      <h2>Arquitetura &amp; <b>Lazer</b></h2>
+      <p class="eyebrow">Selecionadas por Siqueira Campos</p>
+      <h2>Oportunidades <b>do momento</b></h2>
     </div>
     <div class="opp rv">
       <button class="arrow prev" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m15 5-7 7 7 7"/></svg></button>
       <div class="opp-track" id="track">
-      <article class="slide on" aria-roledescription="slide" aria-label="1 de 3">
+      <article class="slide on" aria-roledescription="slide" aria-label="1 de 5">
+        <div class="ph"><img src="hero.webp" alt="Fachada do Boulevard Butantã ao entardecer" loading="lazy"><span>Boulevard Butantã</span></div>
+        <div class="txt">
+          <p class="eyebrow">Butantã · a 240 passos do metrô</p>
+          <h3>Boulevard Butantã</h3>
+          <div class="big"><small class="pre">a partir de</small>R$ 998 mil</div>
+          <div class="rule"></div>
+          <p>Apartamentos de 80, 83, 106 e 134 m². Financiamento direto com a construtora em até 150 meses. E o melhor de tudo: consulte a taxa que temos pra você.*</p>
+          <ul class="pills"><li>80 a 134 m²</li><li>Até 150x direto</li><li>Taxa especial</li></ul>
+          <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consultar a taxa</a>
+          <p class="nota">*Consulte condições. Sujeito a análise de crédito.</p>
+        </div>
+      </article>
+      <article class="slide" aria-roledescription="slide" aria-label="2 de 5">
+        <div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada à venda no Butantã" loading="lazy"><span>Ativo de renda</span></div>
+        <div class="txt">
+          <p class="eyebrow">Ativo à venda · em operação</p>
+          <h3>Loja locada gerando renda</h3>
+          <div class="big">R$ 115 mil<small>por mês de aluguel</small></div>
+          <div class="rule"></div>
+          <p>Loja única de 1.674,88 m² com pé-direito duplo e ≈ 28 vagas, perto do metrô. Já locada, em contrato de 5 + 5 anos: a renda começa no primeiro dia.</p>
+          <ul class="pills"><li>Renda em contrato</li><li>Locatário público</li><li>Valor sob consulta</li></ul>
+          <a class="btn-gold" href="#investimento-renda-zona-oeste">Mais informações, clique aqui</a>
+        </div>
+      </article>
+      <article class="slide" aria-roledescription="slide" aria-label="3 de 5">
         <div class="ph"><img src="hall.webp" alt="Hall social do Boulevard Butantã" loading="lazy"><span>Hall social</span></div>
         <div class="txt">
           <p class="eyebrow">Butantã · Zona Oeste</p>
@@ -1049,11 +1100,11 @@ form.lead label{font-size:13px}
           <div class="by"><b>Rua Dráusio, 154</b></div>
           <div class="rule"></div>
           <p>Em obras, a 240 passos do Metrô Butantã, ao lado de Pinheiros e perto da Faria Lima.</p>
-          <ul class="pills"><li>Perto do Metrô</li><li>83 a 134 m²</li><li>A partir de R$ 998 mil</li></ul>
+          <ul class="pills"><li>Perto do Metrô</li><li>80 a 134 m²</li><li>A partir de R$ 998 mil</li></ul>
           <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20o%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consulte aqui</a>
         </div>
       </article>
-      <article class="slide" aria-roledescription="slide" aria-label="2 de 3">
+      <article class="slide" aria-roledescription="slide" aria-label="4 de 5">
         <div class="ph"><img src="piscina.webp" alt="Piscina com deck do Boulevard Butantã" loading="lazy"><span>Lazer</span></div>
         <div class="txt">
           <p class="eyebrow">Boulevard Butantã</p>
@@ -1065,7 +1116,7 @@ form.lead label{font-size:13px}
           <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20saber%20do%20lazer%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consulte aqui</a>
         </div>
       </article>
-      <article class="slide" aria-roledescription="slide" aria-label="3 de 3">
+      <article class="slide" aria-roledescription="slide" aria-label="5 de 5">
         <div class="ph"><img src="varanda.webp" alt="Varanda gourmet do apartamento decorado" loading="lazy"><span>Decorado</span></div>
         <div class="txt">
           <p class="eyebrow">Boulevard Butantã</p>

@@ -327,6 +327,9 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
 .dslide{position:relative}
 .dslide .ds{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;display:block}
 .dslide .ds.on{opacity:1;z-index:1}
+.dslide .dsa{position:absolute;top:32%;z-index:3;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.82);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(9,18,36,.25);transition:background .25s}
+.dslide .dsa:hover{background:#fff}.dslide .dsa svg{width:18px;height:18px}.dslide .dsp{left:12px}.dslide .dsn{right:12px}
+.dstat .n:not(.nm){white-space:nowrap}
 .dslide .ds img{width:100%;height:118%;object-fit:cover}
 .dslide .dcap{position:absolute;left:0;right:0;top:0;padding:16px 22px 46px;color:#fff;font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;background:linear-gradient(0deg,transparent,rgba(9,18,36,.72))}
 .split .media .stat{z-index:2}
@@ -376,6 +379,12 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
 @media (max-width:700px){body .brow-h h3 span{font-size:16px;color:var(--navy);font-weight:500}body .card .loc{font-size:14px;letter-spacing:.22em;padding:15px 18px}body .card h3{font-size:24px}body .card .meta{font-size:15.5px;line-height:1.5}body .card .price{font-size:17px}body .card .tag{font-size:12px}}
 html,body{overflow-x:clip}
 .opp .nota{font-size:12.5px;color:var(--muted);margin:14px 0 0}
+/* cards: nome do empreendimento em negrito e bairro maior (todas as telas) */
+body .card h3{font-weight:600;font-size:24px;letter-spacing:-.005em}
+body .card .loc{font-size:14px;font-weight:600}
+body .card .meta{color:#3A4458}
+.brow-h h3{font-weight:500}
+@media (max-width:700px){body .card h3{font-size:25px}}
 /* auditoria de alinhamento: títulos todos à esquerda, mesma linha do resto do site */
 #oportunidades .center,#bairros .center{text-align:left}
 #oportunidades .center h2,#bairros h2,#oportunidades .center .eyebrow,#bairros .eyebrow{text-align:left}
@@ -919,7 +928,7 @@ form.lead label{font-size:13px}
       <div class="dd"><button type="button" aria-haspopup="true">Zona Sul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="dd-menu"><a href="#bairro-itaim-bibi" data-b="itaim">Itaim Bibi</a><a href="#bairro-moema" data-b="moema">Moema</a></div></div>
       <div class="dd"><button type="button" aria-haspopup="true">Empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#oportunidades">Oportunidades</a><a href="#investimento-renda-zona-oeste">Investimento para renda</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
+        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#sobre">Oportunidades</a><a href="#investimento-renda-zona-oeste">Investimento para renda</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
       <a class="mlink" href="#localizacao">Localização</a>
     </nav>
     <a class="cta" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
@@ -929,7 +938,7 @@ form.lead label{font-size:13px}
 <div class="drawer" id="drawer" hidden>
   <button id="close">Fechar ✕</button>
   <a href="#empreendimentos">Empreendimentos</a>
-  <a href="#oportunidades">Oportunidades</a>
+  <a href="#sobre">Oportunidades</a>
   <a href="#investimento-renda-zona-oeste">Investimento para renda</a>
   <div class="dsub"><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a><a href="#boulevard-butanta">Boulevard Butantã</a></div>
   <a href="#bairros">Bairros</a>
@@ -1058,82 +1067,7 @@ form.lead label{font-size:13px}
   </div>
 </section>
 
-<section id="oportunidades">
-  <div class="wrap">
-    <div class="center rv" style="margin-bottom:56px">
-      <p class="eyebrow">Selecionadas por Siqueira Campos</p>
-      <h2>Oportunidades <b>do momento</b></h2>
-    </div>
-    <div class="opp rv">
-      <button class="arrow prev" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m15 5-7 7 7 7"/></svg></button>
-      <div class="opp-track" id="track">
-      <article class="slide on" aria-roledescription="slide" aria-label="1 de 5">
-        <div class="ph"><img src="hero.webp" alt="Fachada do Boulevard Butantã ao entardecer" loading="lazy"><span>Boulevard Butantã</span></div>
-        <div class="txt">
-          <p class="eyebrow">Butantã · a 240 passos do metrô</p>
-          <h3>Boulevard Butantã</h3>
-          <div class="big"><small class="pre">a partir de</small>R$ 998 mil</div>
-          <div class="rule"></div>
-          <p>Apartamentos de 80, 83, 106 e 134 m². Financiamento direto com a construtora em até 150 meses. E o melhor de tudo: consulte a taxa que temos pra você.*</p>
-          <ul class="pills"><li>80 a 134 m²</li><li>Até 150x direto</li><li>Taxa especial</li></ul>
-          <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consultar a taxa</a>
-          <p class="nota">*Consulte condições. Sujeito a análise de crédito.</p>
-        </div>
-      </article>
-      <article class="slide" aria-roledescription="slide" aria-label="2 de 5">
-        <div class="ph"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada à venda no Butantã" loading="lazy"><span>Ativo de renda</span></div>
-        <div class="txt">
-          <p class="eyebrow">Ativo à venda · em operação</p>
-          <h3>Loja locada gerando renda</h3>
-          <div class="big">R$ 115 mil<small>por mês de aluguel</small></div>
-          <div class="rule"></div>
-          <p>Loja única de 1.674,88 m² com pé-direito duplo e ≈ 28 vagas, perto do metrô. Já locada, em contrato de 5 + 5 anos: a renda começa no primeiro dia.</p>
-          <ul class="pills"><li>Renda em contrato</li><li>Locatário público</li><li>Valor sob consulta</li></ul>
-          <a class="btn-gold" href="#investimento-renda-zona-oeste">Mais informações, clique aqui</a>
-        </div>
-      </article>
-      <article class="slide" aria-roledescription="slide" aria-label="3 de 5">
-        <div class="ph"><img src="hall.webp" alt="Hall social do Boulevard Butantã" loading="lazy"><span>Hall social</span></div>
-        <div class="txt">
-          <p class="eyebrow">Butantã · Zona Oeste</p>
-          <h3>Boulevard Butantã</h3>
-          <div class="by"><b>Rua Dráusio, 154</b></div>
-          <div class="rule"></div>
-          <p>Em obras, a 240 passos do Metrô Butantã, ao lado de Pinheiros e perto da Faria Lima.</p>
-          <ul class="pills"><li>Perto do Metrô</li><li>80 a 134 m²</li><li>A partir de R$ 998 mil</li></ul>
-          <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20o%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consulte aqui</a>
-        </div>
-      </article>
-      <article class="slide" aria-roledescription="slide" aria-label="4 de 5">
-        <div class="ph"><img src="piscina.webp" alt="Piscina com deck do Boulevard Butantã" loading="lazy"><span>Lazer</span></div>
-        <div class="txt">
-          <p class="eyebrow">Boulevard Butantã</p>
-          <h3>Lazer completo</h3>
-          <div class="by"><b>para toda a família</b></div>
-          <div class="rule"></div>
-          <p>Piscina com deck, academia, quadra, playground e salão gourmet dentro do condomínio.</p>
-          <ul class="pills"><li>Piscina</li><li>Academia</li><li>Quadra</li></ul>
-          <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20saber%20do%20lazer%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consulte aqui</a>
-        </div>
-      </article>
-      <article class="slide" aria-roledescription="slide" aria-label="5 de 5">
-        <div class="ph"><img src="varanda.webp" alt="Varanda gourmet do apartamento decorado" loading="lazy"><span>Decorado</span></div>
-        <div class="txt">
-          <p class="eyebrow">Boulevard Butantã</p>
-          <h3>Decorado aberto</h3>
-          <div class="by"><b>visite com o corretor</b></div>
-          <div class="rule"></div>
-          <p>Conheça o apartamento decorado no estande e simule o financiamento direto com a construtora.</p>
-          <ul class="pills"><li>Varanda gourmet</li><li>Plantas inteligentes</li><li>Visita agendada</li></ul>
-          <a class="btn-gold" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20agendar%20uma%20visita%20ao%20decorado%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener">Consulte aqui</a>
-        </div>
-      </article>
-      </div>
-      <button class="arrow next" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></button>
-      <div class="dots" id="dots"></div>
-    </div>
-  </div>
-</section>
+
 
 
 <section class="band-white destaque">
@@ -1160,8 +1094,8 @@ form.lead label{font-size:13px}
 <section id="sobre">
   <div class="wrap split rev">
     <div class="media rv">
-      <div class="frame dslide"><a class="ds on" href="#boulevard-butanta" aria-label="Decorado · Boulevard Butantã" data-n="89" data-u="%" data-l="Vendido · Boulevard" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="dcap">Decorado · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Decorado · Grand Metropolitan" data-n="Grand Metropolitan" data-u="" data-l="Pronto para morar" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Grand%20Metropolitan%20Butant%C3%A3."><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="dcap">Decorado · Grand Metropolitan</span></a><a class="ds" href="#boulevard-butanta" aria-label="Varanda gourmet · Boulevard Butantã" data-n="89" data-u="%" data-l="Vendido · Boulevard" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="boulevard-decorado-varanda-gourmet.webp" alt="Varanda gourmet · Boulevard Butantã" loading="lazy"><span class="dcap">Varanda gourmet · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Terraço gourmet · Grand Metropolitan" data-n="Grand Metropolitan" data-u="" data-l="Pronto para morar" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Grand%20Metropolitan%20Butant%C3%A3."><img class="px" src="grand-metropolitan-decorado-terraco-gourmet.webp" alt="Terraço gourmet · Grand Metropolitan" loading="lazy"><span class="dcap">Terraço gourmet · Grand Metropolitan</span></a><a class="ds" href="#green-view-butanta" aria-label="Salão de festas · Green View" data-n="Green View" data-u="" data-l="Pronto · acesso imediato" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Green%20View%20Residence."><img class="px" src="green-view-salao-festas.webp" alt="Salão de festas · Green View" loading="lazy"><span class="dcap">Salão de festas · Green View</span></a><a class="ds" href="#boulevard-butanta" aria-label="Dormitório · Boulevard Butantã" data-n="89" data-u="%" data-l="Vendido · Boulevard" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="boulevard-decorado-dormitorio-home-office.webp" alt="Dormitório · Boulevard Butantã" loading="lazy"><span class="dcap">Dormitório · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Cozinha · Grand Metropolitan" data-n="Grand Metropolitan" data-u="" data-l="Pronto para morar" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Grand%20Metropolitan%20Butant%C3%A3."><img class="px" src="grand-metropolitan-decorado-cozinha.webp" alt="Cozinha · Grand Metropolitan" loading="lazy"><span class="dcap">Cozinha · Grand Metropolitan</span></a><a class="ds" href="#green-view-butanta" aria-label="Hall social · Green View" data-n="Green View" data-u="" data-l="Pronto · acesso imediato" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Green%20View%20Residence."><img class="px" src="green-view-hall-social.webp" alt="Hall social · Green View" loading="lazy"><span class="dcap">Hall social · Green View</span></a><a class="ds" href="#vertice-butanta" aria-label="Decorado · Vértice Butantã" data-n="Vértice" data-u="" data-l="Em obras · ao lado de Pinheiros" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20V%C3%A9rtice%20Butant%C3%A3."><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="dcap">Decorado · Vértice Butantã</span></a><a class="ds" href="#vertice-butanta" aria-label="Piscina com raia · Vértice Butantã" data-n="Vértice" data-u="" data-l="Em obras · ao lado de Pinheiros" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20V%C3%A9rtice%20Butant%C3%A3."><img class="px" src="vertice-piscina.webp" alt="Piscina com raia · Vértice Butantã" loading="lazy"><span class="dcap">Piscina com raia · Vértice Butantã</span></a></div>
-      <a class="stat dstat" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><div class="dbox"><div class="n">89<small>%</small></div><div class="l">Vendido · Boulevard</div><div class="cta">Fale com nosso time: valores e condições →</div></div></a>
+      <div class="frame dslide"><a class="ds on" href="#boulevard-butanta" aria-label="Boulevard Butantã · 80 a 134 m²" data-n="R$ 998 mil" data-u="" data-l="A partir de · Boulevard · até 150x direto" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="hero.webp" alt="Boulevard Butantã · 80 a 134 m²" loading="lazy"><span class="dcap">Boulevard Butantã · 80 a 134 m²</span></a><a class="ds" href="#investimento-renda-zona-oeste" aria-label="Ativo de renda · Loja locada" data-n="R$ 115 mil" data-u="/mês" data-l="Loja locada à venda · gerando renda" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20informa%C3%A7%C3%B5es%20da%20loja%20locada%20%C3%A0%20venda."><img class="px" src="investimento-renda-fachada-projeto.webp" alt="Ativo de renda · Loja locada" loading="lazy"><span class="dcap">Ativo de renda · Loja locada</span></a><a class="ds" href="#boulevard-butanta" aria-label="Decorado · Boulevard Butantã" data-n="R$ 998 mil" data-u="" data-l="A partir de · Decorado Boulevard Butantã" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="dcap">Decorado · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Decorado · Grand Metropolitan" data-n="Grand Metropolitan" data-u="" data-l="Pronto para morar" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Grand%20Metropolitan%20Butant%C3%A3."><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="dcap">Decorado · Grand Metropolitan</span></a><a class="ds" href="#raizes-butanta" aria-label="Raízes Premium Butantã" data-n="Raízes Premium" data-u="" data-l="Pronto · acesso imediato" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20do%20Ra%C3%ADzes%20Premium%20Butant%C3%A3."><img class="px" src="raizes-butanta-fachada-2-torres.webp" alt="Raízes Premium Butantã" loading="lazy"><span class="dcap">Raízes Premium Butantã</span></a><a class="ds" href="#vertice-butanta" aria-label="Decorado · Vértice Butantã" data-n="Vértice" data-u="" data-l="Em obras · ao lado de Pinheiros" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20V%C3%A9rtice%20Butant%C3%A3."><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="dcap">Decorado · Vértice Butantã</span></a><button type="button" class="dsa dsp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="dsa dsn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button></div>
+      <a class="stat dstat" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><div class="dbox"><div class="n">R$ 998 mil</div><div class="l">A partir de · Boulevard · até 150x direto</div><div class="cta">Fale com nosso time: valores e condições →</div></div></a>
     </div>
     <div class="copy rv">
       <p class="eyebrow">Atendimento</p>
@@ -2622,6 +2556,7 @@ t.addEventListener('scroll',u,{passive:true});u()})();</script>
   heroGo(0);
 
   // Carrossel
+  if(document.getElementById('track')){
   var tr=document.getElementById('track'), sl=[].slice.call(tr.children), dots=document.getElementById('dots'), cur=0;
   sl.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Ir para '+(i+1));d.onclick=function(){show(i)};dots.appendChild(d)});
   function mark(i){cur=i;sl.forEach(function(s,k){s.classList.toggle('on',k===i)});[].forEach.call(dots.children,function(d,k){d.setAttribute('aria-current',k===i)})}
@@ -2630,6 +2565,7 @@ t.addEventListener('scroll',u,{passive:true});u()})();</script>
   document.getElementById('next').onclick=function(){show(cur+1)};
   var t;tr.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){mark(Math.round(tr.scrollLeft/tr.clientWidth))},80)},{passive:true});
   mark(0);
+  }
 
   // Menus suspensos (toque no celular/tablet)
   document.querySelectorAll('.dd>button').forEach(function(btn){btn.onclick=function(e){var d=btn.parentNode,o=d.classList.contains('open');document.querySelectorAll('.dd').forEach(function(x){x.classList.remove('open')});if(!o)d.classList.add('open');e.stopPropagation()}});
@@ -2699,9 +2635,10 @@ var mo=new MutationObserver(upd);bgs.forEach(function(b){mo.observe(b,{attribute
 var st=document.querySelector('.dstat'),bx=st&&st.querySelector('.dbox'),N=st&&st.querySelector('.n'),L=st&&st.querySelector('.l');
 function box(e){if(!st)return;var n=e.getAttribute('data-n'),u=e.getAttribute('data-u'),l=e.getAttribute('data-l'),w=e.getAttribute('data-wa');
 if(st.getAttribute('data-cur')===n)return;st.setAttribute('data-cur',n);bx.classList.add('out');
-setTimeout(function(){N.innerHTML=n+(u?'<small>'+u+'</small>':'');N.classList.toggle('nm',!u);L.textContent=l;st.href=w;bx.classList.remove('out')},450)}
+setTimeout(function(){N.innerHTML=n+(u?'<small>'+u+'</small>':'');N.classList.toggle('nm',!u&&!/^R\$/.test(n));L.textContent=l;st.href=w;bx.classList.remove('out')},450)}
 st&&st.setAttribute('data-cur',d[0].getAttribute('data-n'));
-setInterval(function(){if(document.hidden)return;d[i].classList.remove('on');i=(i+1)%d.length;d[i].classList.add('on');box(d[i])},4200)})();</script>
+function go(k){d[i].classList.remove('on');i=(k+d.length)%d.length;d[i].classList.add('on');box(d[i])}
+var bp=document.querySelector('.dslide .dsp'),bn=document.querySelector('.dslide .dsn');if(bp){bp.onclick=function(e){e.preventDefault();go(i-1)};bn.onclick=function(e){e.preventDefault();go(i+1)}}})();</script>
 <script>(function(){
 document.querySelectorAll('.brow-w').forEach(function(w){var t=w.querySelector('.brow-t'),p=w.querySelector('.prev'),n=w.querySelector('.next');
 function up(){var ov=t.scrollWidth>t.clientWidth+4;w.classList.toggle('ov',ov);p.disabled=t.scrollLeft<8;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-8}

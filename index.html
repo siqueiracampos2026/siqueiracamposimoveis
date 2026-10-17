@@ -99,8 +99,14 @@ nav.menu{display:flex;align-items:center;gap:clamp(14px,2vw,36px);margin-left:cl
 .hero-dots .cap::before{content:"";width:28px;height:1px;background:var(--gold-soft);flex:none}
 .hero-dots .csub{display:block;color:#F0DCA6;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.55);margin-top:-6px;min-height:1em}
 .hero-dots .ln{display:flex;gap:8px}
+.hero-dots .hnav{display:flex;align-items:center;gap:12px;pointer-events:auto}
+.hero-dots .hn{width:40px!important;height:40px!important;border-radius:50%;border:1px solid rgba(255,255,255,.55)!important;background:rgba(9,18,36,.35)!important;color:#fff;display:grid;place-items:center;overflow:visible!important;transition:background .25s}
+.hero-dots .hn:hover{background:rgba(201,165,92,.55)!important}.hero-dots .hn svg{width:18px;height:18px}
+.hero-dots .ln button{height:14px;background:transparent;}
+.hero-dots .ln button::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:rgba(255,255,255,.35)}
+.hero-dots .ln button[aria-current="true"]::after{top:6px;bottom:auto;height:2px}
 .hero-dots button{width:34px;height:2px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;position:relative;overflow:hidden}
-.hero-dots button[aria-current="true"]::after{content:"";position:absolute;inset:0;background:var(--gold-soft);transform-origin:left;animation:fill 6.5s linear forwards}
+.hero-dots button[aria-current="true"]::after{content:"";position:absolute;inset:0;background:var(--gold-soft);transform-origin:left;animation:fill 5s linear forwards}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,18,36,.55) 0%,rgba(9,18,36,.15) 35%,rgba(9,18,36,.7) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:130px clamp(48px,9vh,110px)}
@@ -978,7 +984,7 @@ form.lead label{font-size:13px}
     </div>
 
   </div>
-  <div class="hero-dots"><span class="cap" id="heroCap">São Paulo</span><span class="csub" id="heroSub"></span><div class="ln" id="heroDots"></div></div>
+  <div class="hero-dots"><span class="cap" id="heroCap">São Paulo</span><span class="csub" id="heroSub"></span><div class="hnav"><button type="button" class="hn" id="heroPrev" aria-label="Imagem anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><div class="ln" id="heroDots"></div><button type="button" class="hn" id="heroNext" aria-label="Próxima imagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
 </section>
 
 <section id="empreendimentos">
@@ -2552,8 +2558,9 @@ t.addEventListener('scroll',u,{passive:true});u()})();</script>
   bgs.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Imagem '+(i+1));d.onclick=function(){heroGo(i)};hd.appendChild(d)});
   function heroGo(i){hi=(i+bgs.length)%bgs.length;bgs.forEach(function(b,k){b.classList.toggle('on',k===hi)});
     [].forEach.call(hd.children,function(d,k){d.removeAttribute('aria-current');void d.offsetWidth;if(k===hi)d.setAttribute('aria-current','true')});
-    hc.textContent=bgs[hi].dataset.cap; document.getElementById('heroSub').textContent=bgs[hi].dataset.sub||''; clearTimeout(ht); if(!reduce) ht=setTimeout(function(){heroGo(hi+1)},6500);}
+    hc.textContent=bgs[hi].dataset.cap; document.getElementById('heroSub').textContent=bgs[hi].dataset.sub||''; clearTimeout(ht); if(!reduce) ht=setTimeout(function(){heroGo(hi+1)},5000);}
   heroGo(0);
+  var hp=document.getElementById('heroPrev'),hn=document.getElementById('heroNext');if(hp){hp.onclick=function(){heroGo(hi-1)};hn.onclick=function(){heroGo(hi+1)}}
 
   // Carrossel
   if(document.getElementById('track')){

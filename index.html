@@ -391,6 +391,13 @@ html,body{overflow-x:clip}
 .pn-s{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
 .pn-s.on{opacity:1;visibility:visible}
 .at-fr{position:relative;touch-action:pan-y}
+.at-box{position:absolute;z-index:3;left:-24px;bottom:-30px;display:block;max-width:min(320px,80%);background:var(--navy);color:#fff;text-decoration:none;padding:18px 24px 20px;box-shadow:0 18px 40px rgba(15,30,56,.22);transition:opacity .4s ease,transform .3s}
+.at-box:hover{transform:translateY(-3px)}
+.at-box.out{opacity:0}
+.at-b{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.at-t{display:block;font-size:19px;line-height:1.3;font-weight:400;margin:8px 0 10px}
+.at-k{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#F0DCA6;font-weight:600}
+@media (max-width:980px){.at-box{left:12px;bottom:-44px;padding:12px 16px 14px;max-width:78%}.at-t{font-size:16px;margin:6px 0 8px}}
 .at-s{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:block}
 .at-s.on{opacity:1;z-index:1}
 .at-s img{width:100%;height:100%;object-fit:cover}
@@ -1202,8 +1209,8 @@ form.lead label{font-size:13px}
 <section id="sobre">
   <div class="wrap split rev">
     <div class="media rv">
-      <div class="frame at-fr"><a class="at-s on" href="#boulevard-butanta"><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="at-c">Decorado · Boulevard Butantã</span></a><a class="at-s" href="#grand-metropolitan-butanta"><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="at-c">Decorado · Grand Metropolitan</span></a><a class="at-s" href="#vertice-butanta"><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="at-c">Decorado · Vértice Butantã</span></a><a class="at-s" href="#boulevard-butanta"><img class="px" src="boulevard-decorado-varanda-gourmet.webp" alt="Varanda gourmet · Boulevard Butantã" loading="lazy"><span class="at-c">Varanda gourmet · Boulevard Butantã</span></a><a class="at-s" href="#grand-metropolitan-butanta"><img class="px" src="grand-metropolitan-decorado-cozinha.webp" alt="Cozinha · Grand Metropolitan" loading="lazy"><span class="at-c">Cozinha · Grand Metropolitan</span></a><a class="at-s" href="#vertice-butanta"><img class="px" src="vertice-decorado-jantar.webp" alt="Jantar · Vértice Butantã" loading="lazy"><span class="at-c">Jantar · Vértice Butantã</span></a><div class="at-d" aria-hidden="true"></div></div>
-      <div class="stat"><div class="n">CRECI</div><div class="l">92522-F · atendimento direto</div></div>
+      <div class="frame at-fr"><a class="at-s on" href="#boulevard-butanta" data-b="Butantã" data-t="Estamos com oportunidade no Butantã" data-k="Saiba mais"><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="at-c">Decorado · Boulevard Butantã</span></a><a class="at-s" href="#gravura-perdizes" data-b="Perdizes" data-t="Você conhece a região de Perdizes?" data-k="Conheça o GRAVURA"><img class="px" src="gravura-fachada.webp" alt="GRAVURA · Perdizes" loading="lazy"><span class="at-c">GRAVURA · Perdizes</span></a><a class="at-s" href="#alma-pinheiros" data-b="Pinheiros" data-t="Lançamento em Pinheiros" data-k="Saiba mais do Almá"><img class="px" src="alma-pinheiros-fachada.webp" alt="Almá · Pinheiros" loading="lazy"><span class="at-c">Almá · Pinheiros</span></a><a class="at-s" href="#grand-metropolitan-butanta" data-b="Butantã" data-t="Pronto para morar no Butantã" data-k="Conheça o Grand Metropolitan"><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="at-c">Decorado · Grand Metropolitan</span></a><a class="at-s" href="#ode-perdizes" data-b="Perdizes" data-t="Perdizes, pronto para morar" data-k="Conheça o ODE"><img class="px" src="ode-perdizes-fachada.webp" alt="ODE · Perdizes" loading="lazy"><span class="at-c">ODE · Perdizes</span></a><a class="at-s" href="#vertice-butanta" data-b="Butantã" data-t="Ao lado de Pinheiros e da Faria Lima" data-k="Conheça o Vértice"><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="at-c">Decorado · Vértice Butantã</span></a><div class="at-d" aria-hidden="true"></div></div>
+      <a class="at-box" href="#boulevard-butanta"><span class="at-b">Butantã</span><span class="at-t">Estamos com oportunidade no Butantã</span><span class="at-k">Saiba mais →</span></a>
     </div>
     <div class="copy rv">
       <p class="eyebrow">Atendimento</p>
@@ -2768,7 +2775,7 @@ var x0=null;st.addEventListener('touchstart',function(e){x0=e.touches[0].clientX
 go(0)})();</script>
 <script>(function(){var f=document.querySelector('.at-fr');if(!f)return;var s=[].slice.call(f.querySelectorAll('.at-s')),d=f.querySelector('.at-d'),i=0,t,auto=true;
 s.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Foto '+(k+1));b.onclick=function(e){e.preventDefault();auto=false;go(k)};d.appendChild(b)});
-function go(k){s[i].classList.remove('on');i=(k+s.length)%s.length;s[i].classList.add('on');[].forEach.call(d.children,function(b,j){b.setAttribute('aria-current',j===i)});clearTimeout(t);if(auto)t=setTimeout(function(){if(!document.hidden)go(i+1);else go(i)},5000)}
+function go(k){s[i].classList.remove('on');i=(k+s.length)%s.length;s[i].classList.add('on');var bx=document.querySelector('.at-box');if(bx){var e=s[i];bx.classList.add('out');setTimeout(function(){bx.href=e.getAttribute('href');bx.querySelector('.at-b').textContent=e.dataset.b;bx.querySelector('.at-t').textContent=e.dataset.t;bx.querySelector('.at-k').textContent=e.dataset.k+' →';bx.classList.remove('out')},350)}[].forEach.call(d.children,function(b,j){b.setAttribute('aria-current',j===i)});clearTimeout(t);if(auto)t=setTimeout(function(){if(!document.hidden)go(i+1);else go(i)},5000)}
 var x0=null,moved=false;f.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;moved=false},{passive:true});
 f.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){moved=true;auto=false;go(i+(dx<0?1:-1))}x0=null},{passive:true});
 f.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false}},true);

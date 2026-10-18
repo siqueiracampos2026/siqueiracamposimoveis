@@ -391,6 +391,16 @@ html,body{overflow-x:clip}
 .pn-stage{display:grid}
 .pn-s{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
 .pn-s.on{opacity:1;visibility:visible}
+.at-fr{position:relative;touch-action:pan-y}
+.at-s{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:block}
+.at-s.on{opacity:1;z-index:1}
+.at-s img{width:100%;height:100%;object-fit:cover}
+.at-c{position:absolute;left:0;right:0;top:0;padding:16px 22px 44px;color:#fff;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;background:linear-gradient(0deg,transparent,rgba(9,18,36,.6))}
+.at-d{position:absolute;z-index:2;right:18px;top:18px;display:flex;gap:6px}
+.at-d button{width:22px;height:12px;border:0;padding:0;background:transparent;cursor:pointer;position:relative}
+.at-d button::before{content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:rgba(255,255,255,.5)}
+.at-d button[aria-current="true"]::before{background:var(--gold-soft)}
+@media (max-width:700px){.at-c{font-size:11px;padding:12px 16px 36px}.at-d{top:40px;right:14px}}
 body section.painel{padding-block:clamp(48px,5vw,64px) clamp(40px,4vw,56px)}
 .painel .media .frame{aspect-ratio:4/3}
 .painel .facts{gap:8px 28px;margin-bottom:26px}
@@ -1193,7 +1203,7 @@ form.lead label{font-size:13px}
 <section id="sobre">
   <div class="wrap split rev">
     <div class="media rv">
-      <div class="frame"><img class="px" src="sala.webp" alt="Apartamento decorado visitado com o corretor" loading="lazy"></div>
+      <div class="frame at-fr"><a class="at-s on" href="#boulevard-butanta"><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="at-c">Decorado · Boulevard Butantã</span></a><a class="at-s" href="#grand-metropolitan-butanta"><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="at-c">Decorado · Grand Metropolitan</span></a><a class="at-s" href="#vertice-butanta"><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="at-c">Decorado · Vértice Butantã</span></a><a class="at-s" href="#boulevard-butanta"><img class="px" src="boulevard-decorado-varanda-gourmet.webp" alt="Varanda gourmet · Boulevard Butantã" loading="lazy"><span class="at-c">Varanda gourmet · Boulevard Butantã</span></a><a class="at-s" href="#grand-metropolitan-butanta"><img class="px" src="grand-metropolitan-decorado-cozinha.webp" alt="Cozinha · Grand Metropolitan" loading="lazy"><span class="at-c">Cozinha · Grand Metropolitan</span></a><a class="at-s" href="#vertice-butanta"><img class="px" src="vertice-decorado-jantar.webp" alt="Jantar · Vértice Butantã" loading="lazy"><span class="at-c">Jantar · Vértice Butantã</span></a><div class="at-d" aria-hidden="true"></div></div>
       <div class="stat"><div class="n">CRECI</div><div class="l">92522-F · atendimento direto</div></div>
     </div>
     <div class="copy rv">
@@ -2756,6 +2766,13 @@ function stop(){auto=false;clearTimeout(t)}
 st.addEventListener('click',function(e){var a=e.target.closest('.pn-a');if(!a)return;e.preventDefault();stop();go(i+(a.classList.contains('pn-n')?1:-1))});
 st.addEventListener('mouseenter',function(){hov=true;clearTimeout(t)});st.addEventListener('mouseleave',function(){hov=false;plan()});
 var x0=null;st.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});st.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45){stop();go(i+(dx<0?1:-1))}x0=null},{passive:true});
+go(0)})();</script>
+<script>(function(){var f=document.querySelector('.at-fr');if(!f)return;var s=[].slice.call(f.querySelectorAll('.at-s')),d=f.querySelector('.at-d'),i=0,t,auto=true;
+s.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Foto '+(k+1));b.onclick=function(e){e.preventDefault();auto=false;go(k)};d.appendChild(b)});
+function go(k){s[i].classList.remove('on');i=(k+s.length)%s.length;s[i].classList.add('on');[].forEach.call(d.children,function(b,j){b.setAttribute('aria-current',j===i)});clearTimeout(t);if(auto)t=setTimeout(function(){if(!document.hidden)go(i+1);else go(i)},5000)}
+var x0=null,moved=false;f.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;moved=false},{passive:true});
+f.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){moved=true;auto=false;go(i+(dx<0?1:-1))}x0=null},{passive:true});
+f.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false}},true);
 go(0)})();</script>
 
 <script>

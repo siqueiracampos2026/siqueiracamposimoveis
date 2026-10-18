@@ -385,6 +385,37 @@ footer a{color:rgba(255,255,255,.8);cursor:pointer}
 @media (max-width:700px){body .brow-h h3 span{font-size:16px;color:var(--navy);font-weight:500}body .card .loc{font-size:14px;letter-spacing:.22em;padding:15px 18px}body .card h3{font-size:24px}body .card .meta{font-size:15.5px;line-height:1.5}body .card .price{font-size:17px}body .card .tag{font-size:12px}}
 html,body{overflow-x:clip}
 .opp .nota{font-size:12.5px;color:var(--muted);margin:14px 0 0}
+/* Painel de oportunidades (mesmo estilo do Destaque do mês) */
+.painel-h{margin-bottom:clamp(28px,4vw,48px)}
+.pn-stage{display:grid}
+.pn-s{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
+.pn-s.on{opacity:1;visibility:visible}
+body section.painel{padding-block:clamp(48px,5vw,64px) clamp(40px,4vw,56px)}
+.painel .media .frame{aspect-ratio:4/3}
+.painel .facts{gap:8px 28px;margin-bottom:26px}
+.painel .facts li b{white-space:nowrap;font-size:22px}
+.painel .copy p{margin-bottom:18px}
+.painel .rule{margin:18px 0}
+.pn-s .frame{display:block}
+.pn-a{position:absolute;top:44%;z-index:3;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.86);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(9,18,36,.25);transition:background .25s}
+.pn-a:hover{background:#fff}.pn-a svg{width:18px;height:18px}.pn-p{left:14px}.pn-n{right:14px}
+.pn-nota{font-size:12.5px!important;color:var(--muted)!important;margin:16px 0 0}
+.pn-dots{display:flex;gap:8px;margin-top:clamp(52px,6vw,72px)}
+.pn-dots button{width:34px;height:14px;border:0;padding:0;background:transparent;cursor:pointer;position:relative}
+.pn-dots button::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:var(--line)}
+.pn-dots button[aria-current="true"]::before{background:var(--gold)}
+.card .price.renda{font-size:17px}.card .price.renda b{font-size:22px;font-weight:600}
+.card .price .sm{display:block;margin-top:6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#7A5A22}
+@media (max-width:700px){
+  #bairros .bairros{grid-template-columns:1fr 1fr}
+  #bairros .bairro{padding:16px 14px 18px;border-right:1px solid var(--line)}
+  #bairros .bairro:nth-child(2n){border-right:0}
+  #bairros .bairro p{display:none}
+  #bairros .bairro h3{font-size:21px;margin:6px 0 4px}
+  #bairros .bairro .nemp{margin-top:6px}
+  #bairros .bairros-tabs{margin:22px 0 24px}
+  #bairros .bairros-tabs button{white-space:nowrap;padding-inline:14px;font-size:13px}
+}
 /* cards: nome do empreendimento em negrito e bairro maior (todas as telas) */
 body .card h3{font-weight:600;font-size:24px;letter-spacing:-.005em}
 body .card .loc{font-size:14px;font-weight:600}
@@ -429,7 +460,7 @@ body .car-sec{padding-block:clamp(44px,5.5vw,76px)}
   .bairro:hover .emps,.bairro:focus-within .emps{opacity:1;visibility:visible;transform:none}
   .bairro:hover .nemp i{transform:rotate(180deg)}
 }
-@media (hover:none),(max-width:980px){.bairro .emps{display:none}.bairro .nemp i{display:none}.bairro .nemp::after{content:" →"}}
+@media (hover:none),(max-width:980px){.bairro .emps{display:none}.bairro .nemp i{display:none}.bairro .nemp:not(.vb)::after{content:" →"}}
 body .card .loc.venda{color:#E9CF8F;font-size:13.5px;letter-spacing:.14em;font-weight:600}
 @media (max-width:700px){body .card .loc.venda{font-size:13px;letter-spacing:.05em;white-space:nowrap;gap:10px}}
 .card .tag.renda{background:var(--gold-grad);color:var(--navy);font-weight:600;letter-spacing:.12em}
@@ -934,7 +965,7 @@ form.lead label{font-size:13px}
       <div class="dd"><button type="button" aria-haspopup="true">Zona Sul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="dd-menu"><a href="#bairro-itaim-bibi" data-b="itaim">Itaim Bibi</a><a href="#bairro-moema" data-b="moema">Moema</a></div></div>
       <div class="dd"><button type="button" aria-haspopup="true">Empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#sobre">Oportunidades</a><a href="#investimento-renda-zona-oeste">Investimento para renda</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
+        <div class="dd-menu"><a href="#empreendimentos">Imóveis por bairro</a><a href="#painel">Oportunidades</a><a href="#investimento-renda-zona-oeste">Investimento para renda</a><a href="#boulevard-butanta">Boulevard Butantã</a><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a></div></div>
       <a class="mlink" href="#localizacao">Localização</a>
     </nav>
     <a class="cta" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20vim%20pelo%20seu%20site." target="_blank" rel="noopener">Fale comigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
@@ -944,7 +975,7 @@ form.lead label{font-size:13px}
 <div class="drawer" id="drawer" hidden>
   <button id="close">Fechar ✕</button>
   <a href="#empreendimentos">Empreendimentos</a>
-  <a href="#sobre">Oportunidades</a>
+  <a href="#painel">Oportunidades</a>
   <a href="#investimento-renda-zona-oeste">Investimento para renda</a>
   <div class="dsub"><a href="#grand-metropolitan-butanta">Grand Metropolitan Butantã</a><a href="#green-view-butanta">Green View Residence</a><a href="#vertice-butanta">Vértice Butantã</a><a href="#verdi-butanta">Verdi Butantã</a><a href="#raizes-butanta">Raízes Premium Butantã</a><a href="#raizes-studios-butanta">Raízes Premium Studios</a><a href="#gravura-perdizes">GRAVURA Perdizes</a><a href="#ode-perdizes">ODE Perdizes</a><a href="#alma-pinheiros">Almá Pinheiros</a><a href="#boulevard-butanta">Boulevard Butantã</a></div>
   <a href="#bairros">Bairros</a>
@@ -1037,7 +1068,7 @@ form.lead label{font-size:13px}
         <div class="price">A partir de <b>R$ 1,99 milhão</b></div>
       </a>
       <a class="card" href="#investimento-renda-zona-oeste">
-        <div class="loc venda">À venda · renda em contrato</div><div class="img"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada no Butantã" loading="lazy"><span class="tag renda">Locado por R$ 115 mil/mês</span></div><h3>Loja Locada · Renda</h3><div class="meta">Loja única de 1.675 m² · ≈ 28 vagas · perto do metrô</div><div class="price">Valor de venda <b>sob consulta</b></div>
+        <div class="loc venda">À venda · renda em contrato</div><div class="img"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada no Butantã" loading="lazy"><span class="tag renda">Locado · contrato 5 + 5 anos</span></div><h3>Loja Locada · Renda</h3><div class="meta">Loja única de 1.675 m² · ≈ 28 vagas · perto do metrô</div><div class="price renda"><b>R$ 115 mil</b> por mês<span class="sm">Saiba mais agora →</span></div>
       </a>
         </div><button class="brow-a next" type="button" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></button></div>
       </div>
@@ -1076,32 +1107,93 @@ form.lead label{font-size:13px}
 
 
 
-<section class="band-white destaque">
-  <div class="wrap split">
-    <div class="media rv">
-      <div class="frame"><img class="px" src="terraco.webp" alt="Terraço do apartamento decorado de 83 m²" loading="lazy"></div>
-      <div class="stat"><div class="n">240</div><div class="l">Passos do Metrô</div></div>
+<section class="band-white destaque painel" id="painel">
+  <div class="wrap painel-h rv"><p class="eyebrow">Selecionadas por Siqueira Campos</p><h2>Painel de <b>oportunidades</b></h2></div>
+  <div class="pn-stage rv">
+  <div class="wrap split pn-s on" aria-roledescription="slide" aria-label="1 de 5">
+    <div class="media">
+      <a class="frame" href="#boulevard-butanta"><img class="px" src="terraco.webp" alt="Terraço do apartamento decorado do Boulevard Butantã" loading="lazy"></a>
+      <button type="button" class="pn-a pn-p" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="pn-a pn-n" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="stat"><div class="n">240</div><div class="l">Passos do metrô</div></div>
     </div>
-    <div class="copy rv">
+    <div class="copy">
       <p class="eyebrow">Destaque do mês</p>
       <h2>Boulevard <b>Butantã</b></h2>
       <div class="rule"></div>
-      <p>Ao lado de Pinheiros e perto da Faria Lima, a poucos passos da estação Butantã da Linha 4-Amarela. Plantas inteligentes, lazer completo e decorado aberto para visita na Rua Camargo, 34.</p>
-      <ul class="facts">
-        <li><b>R$ 998 mil</b>a partir de</li>
-        <li><b>83 a 134 m²</b>3 plantas</li>
-        <li><b>Linha 4</b>Metrô Butantã</li>
-      </ul>
-      <a class="link" href="#boulevard-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      <p>Ao lado de Pinheiros e perto da Faria Lima, a poucos passos da estação Butantã da Linha 4-Amarela. Financiamento direto com a construtora em até 150 meses. Consulte a taxa que temos pra você.*</p>
+      <ul class="facts"><li><b>R$ 998 mil</b>a partir de</li><li><b>80 a 134 m²</b>4 plantas</li><li><b>Até 150x</b>direto</li></ul>
+      <a class="link" href="#boulevard-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><p class="pn-nota">*Consulte condições. Sujeito a análise de crédito.</p>
     </div>
   </div>
+  <div class="wrap split pn-s" aria-roledescription="slide" aria-label="2 de 5">
+    <div class="media">
+      <a class="frame" href="#investimento-renda-zona-oeste"><img class="px" src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada à venda no Butantã" loading="lazy"></a>
+      <button type="button" class="pn-a pn-p" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="pn-a pn-n" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="stat"><div class="n">R$ 115 mil</div><div class="l">Por mês de aluguel</div></div>
+    </div>
+    <div class="copy">
+      <p class="eyebrow">Ativo de renda · à venda</p>
+      <h2>Loja <b>locada</b></h2>
+      <div class="rule"></div>
+      <p>Loja única de 1.674,88 m² com pé-direito duplo e cerca de 28 vagas, perto do metrô Butantã. Já locada para locatário público, em contrato de 5 + 5 anos: a renda começa no primeiro dia.</p>
+      <ul class="facts"><li><b>R$ 115 mil</b>aluguel mensal</li><li><b>1.675 m²</b>loja única</li><li><b>5 + 5 anos</b>contrato</li></ul>
+      <a class="link" href="#investimento-renda-zona-oeste">Saiba mais agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap split pn-s" aria-roledescription="slide" aria-label="3 de 5">
+    <div class="media">
+      <a class="frame" href="#grand-metropolitan-butanta"><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado do Grand Metropolitan" loading="lazy"></a>
+      <button type="button" class="pn-a pn-p" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="pn-a pn-n" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="stat"><div class="n">350 m</div><div class="l">Do metrô Butantã</div></div>
+    </div>
+    <div class="copy">
+      <p class="eyebrow">Pronto para morar</p>
+      <h2>Grand <b>Metropolitan</b></h2>
+      <div class="rule"></div>
+      <p>Apartamentos de 73 a 120 m² prontos para morar, a 350 metros da estação Butantã da Linha 4-Amarela. Mude já e conheça o decorado com o corretor.</p>
+      <ul class="facts"><li><b>73 a 120 m²</b>3 tamanhos</li><li><b>Pronto</b>para morar</li><li><b>Diálogo</b>construtora</li></ul>
+      <a class="link" href="#grand-metropolitan-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap split pn-s" aria-roledescription="slide" aria-label="4 de 5">
+    <div class="media">
+      <a class="frame" href="#raizes-butanta"><img class="px" src="raizes-butanta-fachada-2-torres.webp" alt="Fachada das torres do Raízes Premium Butantã" loading="lazy"></a>
+      <button type="button" class="pn-a pn-p" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="pn-a pn-n" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="stat"><div class="n">119 m²</div><div class="l">Até 3 suítes</div></div>
+    </div>
+    <div class="copy">
+      <p class="eyebrow">Pronto · acesso imediato</p>
+      <h2>Raízes <b>Premium</b></h2>
+      <div class="rule"></div>
+      <p>Duas torres da Mitre Realty na Rua Santa Rosa Júnior, prontas para morar, com plantas de 65 a 119 m² e até 3 suítes. Decorado aberto para visita.</p>
+      <ul class="facts"><li><b>65 a 119 m²</b>2 e 3 dorms.</li><li><b>Pronto</b>acesso imediato</li><li><b>Mitre</b>incorporadora</li></ul>
+      <a class="link" href="#raizes-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="wrap split pn-s" aria-roledescription="slide" aria-label="5 de 5">
+    <div class="media">
+      <a class="frame" href="#vertice-butanta"><img class="px" src="vertice-decorado-living.webp" alt="Decorado do Vértice Butantã" loading="lazy"></a>
+      <button type="button" class="pn-a pn-p" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="pn-a pn-n" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="stat"><div class="n">300 m</div><div class="l">Do metrô Butantã</div></div>
+    </div>
+    <div class="copy">
+      <p class="eyebrow">Em obras · ao lado de Pinheiros</p>
+      <h2>Vértice <b>Butantã</b></h2>
+      <div class="rule"></div>
+      <p>Apartamentos de 40 a 120 m² e penthouses de 124 e 241 m², a 300 m do metrô Butantã: para morar ao lado de Pinheiros e da Faria Lima.</p>
+      <ul class="facts"><li><b>40 a 241 m²</b>studios a penthouses</li><li><b>300 m</b>do metrô</li><li><b>Diálogo</b>construtora</li></ul>
+      <a class="link" href="#vertice-butanta">Conhecer o empreendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  </div>
+  <div class="wrap pn-dots" id="pnDots"></div>
 </section>
 
 <section id="sobre">
   <div class="wrap split rev">
     <div class="media rv">
-      <div class="frame dslide"><a class="ds on" href="#boulevard-butanta" aria-label="Boulevard Butantã · 80 a 134 m²" data-n="R$ 998 mil" data-u="" data-l="A partir de · Boulevard · até 150x direto" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="hero.webp" alt="Boulevard Butantã · 80 a 134 m²" loading="lazy"><span class="dcap">Boulevard Butantã · 80 a 134 m²</span></a><a class="ds" href="#investimento-renda-zona-oeste" aria-label="Ativo de renda · Loja locada" data-n="R$ 115 mil" data-u="/mês" data-l="Loja locada à venda · gerando renda" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20informa%C3%A7%C3%B5es%20da%20loja%20locada%20%C3%A0%20venda."><img class="px" src="investimento-renda-fachada-projeto.webp" alt="Ativo de renda · Loja locada" loading="lazy"><span class="dcap">Ativo de renda · Loja locada</span></a><a class="ds" href="#boulevard-butanta" aria-label="Decorado · Boulevard Butantã" data-n="R$ 998 mil" data-u="" data-l="A partir de · Decorado Boulevard Butantã" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3."><img class="px" src="sala.webp" alt="Decorado · Boulevard Butantã" loading="lazy"><span class="dcap">Decorado · Boulevard Butantã</span></a><a class="ds" href="#grand-metropolitan-butanta" aria-label="Decorado · Grand Metropolitan" data-n="Grand Metropolitan" data-u="" data-l="Pronto para morar" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20Grand%20Metropolitan%20Butant%C3%A3."><img class="px" src="grand-metropolitan-decorado-living.webp" alt="Decorado · Grand Metropolitan" loading="lazy"><span class="dcap">Decorado · Grand Metropolitan</span></a><a class="ds" href="#raizes-butanta" aria-label="Raízes Premium Butantã" data-n="Raízes Premium" data-u="" data-l="Pronto · acesso imediato" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20do%20Ra%C3%ADzes%20Premium%20Butant%C3%A3."><img class="px" src="raizes-butanta-fachada-2-torres.webp" alt="Raízes Premium Butantã" loading="lazy"><span class="dcap">Raízes Premium Butantã</span></a><a class="ds" href="#vertice-butanta" aria-label="Decorado · Vértice Butantã" data-n="Vértice" data-u="" data-l="Em obras · ao lado de Pinheiros" data-wa="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20valores%20e%20condi%C3%A7%C3%B5es%20de%20pagamento%20do%20V%C3%A9rtice%20Butant%C3%A3."><img class="px" src="vertice-decorado-living.webp" alt="Decorado · Vértice Butantã" loading="lazy"><span class="dcap">Decorado · Vértice Butantã</span></a><button type="button" class="dsa dsp" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5-7 7 7 7"/></svg></button><button type="button" class="dsa dsn" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg></button></div>
-      <a class="stat dstat" href="https://wa.me/5511960998000?text=Ol%C3%A1%20Siqueira%2C%20quero%20consultar%20a%20taxa%20do%20Boulevard%20Butant%C3%A3." target="_blank" rel="noopener"><div class="dbox"><div class="n">R$ 998 mil</div><div class="l">A partir de · Boulevard · até 150x direto</div><div class="cta">Fale com nosso time: valores e condições →</div></div></a>
+      <div class="frame"><img class="px" src="sala.webp" alt="Apartamento decorado visitado com o corretor" loading="lazy"></div>
+      <div class="stat"><div class="n">CRECI</div><div class="l">92522-F · atendimento direto</div></div>
     </div>
     <div class="copy rv">
       <p class="eyebrow">Atendimento</p>
@@ -1147,13 +1239,13 @@ form.lead label{font-size:13px}
         <a class="cover" href="#bairro-itaim-bibi" aria-label="Ver o bairro Itaim Bibi"></a>
         <div class="z">Zona Sul</div><h3>Itaim Bibi</h3>
         <p>Centro de negócios entre a Faria Lima e a JK, com restaurantes e serviços a pé.</p>
-        <div class="count nemp">Ver o bairro →</div>
+        <div class="count nemp vb">Ver o bairro →</div>
       </div>
       <div class="bairro rv" id="b-moema">
         <a class="cover" href="#bairro-moema" aria-label="Ver o bairro Moema"></a>
         <div class="z">Zona Sul</div><h3>Moema</h3>
         <p>Vizinho do Parque Ibirapuera, com Metrô Linha 5-Lilás e vida de bairro.</p>
-        <div class="count nemp">Ver o bairro →</div>
+        <div class="count nemp vb">Ver o bairro →</div>
       </div>
     </div>
   </div>
@@ -2334,7 +2426,7 @@ t.addEventListener('scroll',u,{passive:true});u()})();</script>
 <section style="padding-block:clamp(44px,6vw,80px)">
   <div class="wrap">
     <div class="head rv"><div><p class="eyebrow">Empreendimentos</p><h2>Apartamentos em <b>Butantã</b></h2></div><span class="b-count">8 empreendimentos</span></div>
-    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 80, 83, 106 e 134 m² · Rua Dráusio, 154</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#vertice-butanta"><div class="loc">Butantã</div><div class="img"><img src="vertice-fachada.webp" alt="Fachada do Vértice Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Vértice Butantã</h3><div class="meta">Butantã · Diálogo · 40 a 241 m² · 300 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#verdi-butanta"><div class="loc">Butantã</div><div class="img"><img src="verdi-butanta-fachada.webp" alt="Fachada do Verdi Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Verdi Butantã</h3><div class="meta">Butantã · Lote 5 · 85 m² · 2 ou 3 dorms. · 190 m do metrô</div><div class="price">A partir de <b>R$ 1,1 milhão</b></div></a><a class="card rv" href="#raizes-butanta"><div class="loc">Butantã</div><div class="img"><img src="raizes-butanta-fachada-2-torres.webp" alt="Fachada do Raízes Premium Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Raízes Premium Butantã</h3><div class="meta">Butantã · Mitre · 65 a 119 m² · acesso imediato</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#raizes-studios-butanta"><div class="loc">Butantã</div><div class="img"><img src="raizes-studios-piscina.webp" alt="Raízes Premium Studios · Torre Araucária" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Raízes Premium Studios</h3><div class="meta">Butantã · Mitre · studios de 26 a 39 m² · para investir</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a><a class="card rv" href="#investimento-renda-zona-oeste"><div class="loc venda">À venda · renda em contrato</div><div class="img"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada no Butantã" loading="lazy"><span class="tag renda">Locado por R$ 115 mil/mês</span></div><h3>Loja Locada · Renda</h3><div class="meta">Loja única de 1.675 m² · ≈ 28 vagas · perto do metrô</div><div class="price">Valor de venda <b>sob consulta</b></div></a></div>
+    <div class="grid"><a class="card rv" href="#boulevard-butanta"><div class="loc">Butantã</div><div class="img"><img src="hero.webp" alt="Fachada do Boulevard Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Boulevard Butantã</h3><div class="meta">Butantã · 80, 83, 106 e 134 m² · Rua Dráusio, 154</div><div class="price">A partir de <b>R$ 998 mil</b></div></a><a class="card rv" href="#vertice-butanta"><div class="loc">Butantã</div><div class="img"><img src="vertice-fachada.webp" alt="Fachada do Vértice Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Vértice Butantã</h3><div class="meta">Butantã · Diálogo · 40 a 241 m² · 300 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#verdi-butanta"><div class="loc">Butantã</div><div class="img"><img src="verdi-butanta-fachada.webp" alt="Fachada do Verdi Butantã" loading="lazy"><span class="tag">Em obras</span></div><h3>Verdi Butantã</h3><div class="meta">Butantã · Lote 5 · 85 m² · 2 ou 3 dorms. · 190 m do metrô</div><div class="price">A partir de <b>R$ 1,1 milhão</b></div></a><a class="card rv" href="#raizes-butanta"><div class="loc">Butantã</div><div class="img"><img src="raizes-butanta-fachada-2-torres.webp" alt="Fachada do Raízes Premium Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Raízes Premium Butantã</h3><div class="meta">Butantã · Mitre · 65 a 119 m² · acesso imediato</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#raizes-studios-butanta"><div class="loc">Butantã</div><div class="img"><img src="raizes-studios-piscina.webp" alt="Raízes Premium Studios · Torre Araucária" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Raízes Premium Studios</h3><div class="meta">Butantã · Mitre · studios de 26 a 39 m² · para investir</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#grand-metropolitan-butanta"><div class="loc">Butantã</div><div class="img"><img src="grand-metropolitan-fachada.webp" alt="Fachada do Grand Metropolitan Butantã" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Grand Metropolitan Butantã</h3><div class="meta">Butantã · Diálogo · 73, 90 e 120 m² · 350 m do metrô</div><div class="price">Consulte valores e condições</div></a><a class="card rv" href="#green-view-butanta"><div class="loc">Butantã</div><div class="img"><img src="green-view-fachada.webp" alt="Fachada do Green View Residence" loading="lazy"><span class="tag">Pronto para morar</span></div><h3>Green View Residence</h3><div class="meta">Butantã · Lavvi · 132 e 159 m² · 350 m do metrô</div><div class="price">A partir de <b>R$ 1,99 milhão</b></div></a><a class="card rv" href="#investimento-renda-zona-oeste"><div class="loc venda">À venda · renda em contrato</div><div class="img"><img src="investimento-renda-fachada-projeto.webp" alt="Loja comercial locada no Butantã" loading="lazy"><span class="tag renda">Locado · contrato 5 + 5 anos</span></div><h3>Loja Locada · Renda</h3><div class="meta">Loja única de 1.675 m² · ≈ 28 vagas · perto do metrô</div><div class="price renda"><b>R$ 115 mil</b> por mês<span class="sm">Saiba mais agora →</span></div></a></div>
   </div>
 </section>
 <section class="band-white">
@@ -2655,6 +2747,15 @@ var f=document.querySelector('.loc-map iframe');if(f){var go=function(){if(!f.sr
 })();</script>
 <script>(function(){var w=document.querySelector('.sig-wrap');if(!w)return;if(!('IntersectionObserver' in window)){w.classList.add('go');return}
 var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){w.classList.add('go');o.disconnect()}})},{threshold:.6});o.observe(w)})();</script>
+<script>(function(){var st=document.querySelector('.pn-stage');if(!st)return;var s=[].slice.call(st.querySelectorAll('.pn-s')),dt=document.getElementById('pnDots'),i=0,t,auto=true,hov=false;
+s.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Oportunidade '+(k+1));b.onclick=function(){stop();go(k)};dt.appendChild(b)});
+function go(k){s[i].classList.remove('on');i=(k+s.length)%s.length;s[i].classList.add('on');[].forEach.call(dt.children,function(b,j){b.setAttribute('aria-current',j===i)});plan()}
+function plan(){clearTimeout(t);if(auto&&!hov&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))t=setTimeout(function(){if(!document.hidden)go(i+1);else plan()},5000)}
+function stop(){auto=false;clearTimeout(t)}
+st.addEventListener('click',function(e){var a=e.target.closest('.pn-a');if(!a)return;e.preventDefault();stop();go(i+(a.classList.contains('pn-n')?1:-1))});
+st.addEventListener('mouseenter',function(){hov=true;clearTimeout(t)});st.addEventListener('mouseleave',function(){hov=false;plan()});
+var x0=null;st.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});st.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45){stop();go(i+(dx<0?1:-1))}x0=null},{passive:true});
+go(0)})();</script>
 
 <script>
 (function(){
@@ -2745,7 +2846,6 @@ var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInters
   addEventListener('hashchange',route); route();
 })();
 </script>
-
 
 <script>(function(){function go(){var m=innerWidth<=700;document.querySelectorAll('.hero [data-bg]').forEach(function(e){e.style.backgroundImage='url('+(m&&e.dataset.bgm?e.dataset.bgm:e.dataset.bg)+')'})}
 if(document.readyState==='complete')setTimeout(go,800);else addEventListener('load',function(){setTimeout(go,800)})})();</script>

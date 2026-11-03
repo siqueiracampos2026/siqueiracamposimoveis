@@ -966,6 +966,23 @@ form.lead label{font-size:13px}
 .btn-gold,.btn-line,.link{font-size:13.5px}
 
 @media (max-width:700px){.hero .bg.on.first{background-image:url(sp-ponte-m.webp)!important}}@media (min-width:1024px){.pl .ph{aspect-ratio:auto;height:440px;overflow:hidden}.pl .ph img{height:100%;min-height:0}.wrap.loc{align-items:start}.wrap.loc .addrbox{position:sticky;top:170px}.lead-grid>:last-child{align-self:center}}@media (min-width:981px){.bairros{grid-template-columns:repeat(3,1fr)}.bairro:nth-child(3n){border-right:0}.bairro:nth-child(-n+3){border-bottom:1px solid var(--line)}}@media (max-width:980px){.bairro:last-child:nth-child(2n){grid-column:auto}}@media (min-width:1024px){.grid .card{display:flex;flex-direction:column}.grid .card .price{margin-top:auto;padding-top:10px}}@media (min-width:1024px){.brow-t .card{display:flex;flex-direction:column}.brow-t .card .price{margin-top:auto;padding-top:10px}}.e-hero .lead,.e-hero .crumbs{display:none}.e-hero h1,.e-hero h1 b,.b-hero h1{font-weight:700}.e-hero .status,.card .tag,.card .loc,.bairro h3,.brow-h h3,.card h3,.at-c{font-weight:700!important}.brow-h h3 span{font-weight:500}.ficha li:nth-child(-n+2) span{font-weight:700}@media (min-width:1024px){.lead-sec{padding-block:44px!important}.lead-sec h2{font-size:clamp(28px,2.4vw,36px)!important;line-height:1.15;margin-bottom:6px}.lead-sec p.sub{max-width:64ch;margin-bottom:14px}.lead-sec .eyebrow{margin-bottom:8px}form.lead{gap:12px 18px!important}form.lead label{margin-bottom:4px}form.lead input,form.lead select{height:46px;padding-block:0}.lead-sec .recebe li{padding-block:4px}}</style>
+<!-- Google tag (gtag.js) · GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-850E34LH9H"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var r=null;try{r=localStorage.getItem('sc_cookies')}catch(e){}
+gtag('consent','default',{analytics_storage:(r==='recusado'?'denied':'granted'),ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});})();
+gtag('js',new Date());
+gtag('config','G-850E34LH9H');
+document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;
+ if(t.closest('#ckYes'))gtag('consent','update',{analytics_storage:'granted'});
+ if(t.closest('#ckNo'))gtag('consent','update',{analytics_storage:'denied'});
+ var a=t.closest('a[href*="wa.me"]');if(a){var m=document.querySelector('main:not([hidden])');gtag('event','clique_whatsapp',{pagina:(m&&m.id?m.id.replace('pg-',''):'home'),empreendimento:(m&&m.dataset.emp)||''});}
+ var p=t.closest('a[href^="tel:"]');if(p)gtag('event','clique_telefone');
+},true);
+document.addEventListener('submit',function(e){var f=e.target;if(f&&f.matches&&f.matches('form.lead'))gtag('event','generate_lead',{empreendimento:f.dataset.emp||''});},true);
+addEventListener('hashchange',function(){var h=(location.hash||'').slice(1);var m=h&&document.getElementById('pg-'+h);if(m)gtag('event','ver_pagina',{pagina:h,empreendimento:m.dataset.emp||''});});
+</script>
 </head>
 <body>
 

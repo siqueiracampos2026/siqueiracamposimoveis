@@ -1401,7 +1401,7 @@ go(0)})();</script>
 
 <script>(function(){function go(){var m=innerWidth<=700;document.querySelectorAll('.hero [data-bg]').forEach(function(e){e.style.backgroundImage='url('+(m&&e.dataset.bgm?e.dataset.bgm:e.dataset.bg)+')'})}
 if(document.readyState==='complete')setTimeout(go,800);else addEventListener('load',function(){setTimeout(go,800)})})();</script>
-<style>.ficha li.lkm a{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold-soft)}.ficha li.lkm a:hover{color:var(--gold)}</style><script>(function(){
+<style>@media(max-width:700px){.lb.light img{width:100%;max-height:72vh}}.ficha li.lkm a{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold-soft)}.ficha li.lkm a:hover{color:var(--gold)}</style><script>(function(){
 // links de metragem: levam direto para a planta clicada
 function go(a,e){var id=(a.getAttribute('href')||'').slice(1),sec=document.getElementById(id);if(!sec)return;e.preventDefault();
  var m=a.getAttribute('data-m'),cs=[].slice.call(sec.querySelectorAll('.pl')),j=a.hasAttribute('data-j')?+a.getAttribute('data-j'):-1,rx=new RegExp('^\\s*'+m.replace(/[.,]/g,'\\$&')+'\\s*m');
@@ -1412,7 +1412,9 @@ function go(a,e){var id=(a.getAttribute('href')||'').slice(1),sec=document.getEl
  if(c.classList.contains('off')){var all=sec.querySelector('.pl-tabs button[data-g="all"]');if(all)all.click()}
  [].forEach.call(sec.querySelectorAll('.pl-m'),function(x){x.classList.toggle('on',x.getAttribute('data-j')==String(j))});
  cs.forEach(function(x){x.classList.remove('hl')});c.classList.add('hl');
- var tr=sec.querySelector('.car-track');if(tr)setTimeout(function(){tr.scrollTo({left:tr.scrollLeft+c.getBoundingClientRect().left-tr.getBoundingClientRect().left,behavior:'smooth'})},350);}
+ var tr=sec.querySelector('.car-track');if(tr)setTimeout(function(){tr.scrollTo({left:tr.scrollLeft+c.getBoundingClientRect().left-tr.getBoundingClientRect().left,behavior:'smooth'})},350);abre(c);}
+function abre(c){if(!c)return;setTimeout(function(){var ph=c.querySelector('.ph');if(ph)ph.click()},750)}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-m]');if(a)go(a,e)});
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.pl-m');if(!b)return;var sec=b.closest('section');if(!sec)return;abre(sec.querySelectorAll('.pl')[+b.getAttribute('data-j')])});
 })();</script></body>
 </html>

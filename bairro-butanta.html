@@ -984,7 +984,15 @@ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)r
 document.addEventListener('submit',function(e){var f=e.target;if(f&&f.matches&&f.matches('form.lead'))gtag('event','generate_lead',{empreendimento:f.dataset.emp||''});},true);
 addEventListener('hashchange',function(){var h=(location.hash||'').slice(1);var m=h&&document.getElementById('pg-'+h);if(m)gtag('event','ver_pagina',{pagina:h,empreendimento:m.dataset.emp||''});});
 </script>
-<style id="bt3">.b-hero .bg.bt3{background-position:70% center}@media(min-width:701px){.b-hero.bt3h::after{background:linear-gradient(180deg,rgba(9,18,36,.55) 0%,rgba(9,18,36,0) 22%),linear-gradient(90deg,rgba(9,18,36,.92) 0%,rgba(9,18,36,.75) 38%,rgba(9,18,36,.15) 52%,rgba(9,18,36,0) 60%)}}@media(max-width:700px){.b-hero .bg.bt3{background-image:url(butanta-river-south-m.webp)!important;background-position:center top}}.bt3-cta{display:none}@media(max-width:700px){.bt3-cta{display:inline-flex;flex-direction:column;margin-top:20px;padding:12px 20px;border:1px solid #C9A55C;color:#fff;text-decoration:none;background:rgba(9,18,36,.6)}.bt3-cta small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F0DCA6;font-weight:600}.bt3-cta b{font-size:16px;font-weight:700;margin-top:3px}.b-hero.bt3h::after{background:linear-gradient(180deg,rgba(9,18,36,.65) 0%,rgba(9,18,36,.35) 35%,rgba(9,18,36,.9) 100%)}}</style></head>
+<style id="bt3">.b-hero .bg.bt3{background-position:70% center}@media(min-width:701px){.b-hero.bt3h::after{background:linear-gradient(180deg,rgba(9,18,36,.55) 0%,rgba(9,18,36,0) 22%),linear-gradient(90deg,rgba(9,18,36,.92) 0%,rgba(9,18,36,.75) 38%,rgba(9,18,36,.15) 52%,rgba(9,18,36,0) 60%)}}@media(max-width:700px){.b-hero .bg.bt3{background-image:url(butanta-river-south-m.webp)!important;background-position:center top}}.bt3-cta{display:none}@media(max-width:700px){.bt3-cta{display:inline-flex;flex-direction:column;margin-top:20px;padding:12px 20px;border:1px solid #C9A55C;color:#fff;text-decoration:none;background:rgba(9,18,36,.6)}.bt3-cta small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F0DCA6;font-weight:600}.bt3-cta b{font-size:16px;font-weight:700;margin-top:3px}.b-hero.bt3h::after{background:linear-gradient(180deg,rgba(9,18,36,.65) 0%,rgba(9,18,36,.35) 35%,rgba(9,18,36,.9) 100%)}}.brand .lg{width:46px;height:46px;flex:none;display:block}.brand .lg-n{display:none}.top.solid .brand .lg-w{display:none}.top.solid .brand .lg-n{display:block}
+.brand span.nm{font-family:var(--font),Montserrat,sans-serif;font-weight:600;font-size:17px;letter-spacing:.14em;line-height:1.15;position:relative;padding-bottom:7px}
+.brand span.nm small{font-size:8.5px;letter-spacing:.16em;margin-top:1px;line-height:1.1;font-weight:500}
+.brand span.nm::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#FFFFFF 50%,transparent) no-repeat,rgba(255,255,255,.18);background-size:35% 100%,100% 100%;animation:cometa 6s cubic-bezier(.45,0,.25,1) infinite}
+.top.solid .brand span.nm::after{background:linear-gradient(90deg,transparent,#C9A55C 50%,transparent) no-repeat,rgba(15,30,56,.15);background-size:35% 100%,100% 100%}
+@keyframes cometa{0%{background-position:-60% 0,0 0}70%,100%{background-position:160% 0,0 0}}
+@media(prefers-reduced-motion:reduce){.brand span.nm::after{animation:none}}
+@media(max-width:760px){.brand .lg{width:42px;height:42px}.brand span.nm{font-size:16px}}
+</style></head>
 <body>
 
 
@@ -992,7 +1000,7 @@ addEventListener('hashchange',function(){var h=(location.hash||'').slice(1);var 
   <div class="bar">
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
     <a class="brand" href="/#inicio" aria-label="Siqueira Campos Imóveis, início">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#C9A55C" stroke-width="2"/><path d="M74 31 A30 30 0 1 0 74 69" fill="none" stroke="#C9A55C" stroke-width="5"/><text x="51" y="65.5" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="45" font-weight="500" fill="currentColor">S</text></svg>
+      <img class="lg lg-w" src="/logo-s-branco.png" alt="" width="46" height="46"><img class="lg lg-n" src="/logo-s-navy.png" alt="" width="46" height="46">
       <span class="nm">SIQUEIRA CAMPOS<small>INVESTIMENTO E SOLUÇÕES IMOBILIÁRIAS</small></span>
     </a>
     <nav class="menu" aria-label="Principal">
